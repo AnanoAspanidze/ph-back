@@ -15,7 +15,14 @@ class CreateTopicTranslationsTable extends Migration
     {
         Schema::create('topic_translations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            
+            $table->integer('topic_id')->unsigned();
+            $table->string('locale')->index();
+            
+            $table->string('title');
+            
+            $table->unique(['topic_id', 'locale']);
+            $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade');
         });
     }
 

@@ -15,7 +15,15 @@ class CreateStepTranslationsTable extends Migration
     {
         Schema::create('step_translations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('step_id')->unsigned();
+            $table->string('locale')->index();
+            
+            $table->string('title');
+            $table->string('sub_title');
+            $table->text('description');
+                        
+            $table->unique(['step_id', 'locale']);
+            $table->foreign('step_id')->references('id')->on('steps')->onDelete('cascade');
         });
     }
 

@@ -15,7 +15,14 @@ class CreatePageAdditionalTranslationsTable extends Migration
     {
         Schema::create('page_additional_translations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('page_additional_id')->unsigned();
+            $table->string('locale')->index();
+            
+            $table->string('title');
+            $table->text('description');
+                        
+            $table->unique(['page_additional_id', 'locale']);
+            $table->foreign('page_additional_id')->references('id')->on('page_additionals')->onDelete('cascade');
         });
     }
 

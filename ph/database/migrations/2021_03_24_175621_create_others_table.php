@@ -15,6 +15,7 @@ class CreateOthersTable extends Migration
     {
         Schema::create('others', function (Blueprint $table) {
             $table->id();
+            $table->string('pdf')->nullable();
             $table->timestamps();
         });
     }

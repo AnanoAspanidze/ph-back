@@ -15,7 +15,12 @@ class CreatePositionTranslationsTable extends Migration
     {
         Schema::create('position_translations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('position_id')->unsigned();
+            $table->string('locale')->index();
+            $table->string('name');
+        
+            $table->unique(['position_id', 'locale']);
+            $table->foreign('position_id')->references('id')->on('positions')->onDelete('cascade');
         });
     }
 

@@ -15,7 +15,16 @@ class CreateOtherTranslationsTable extends Migration
     {
         Schema::create('other_translations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('other_id')->unsigned();
+            $table->string('locale')->index();
+            
+            $table->string('title');
+            $table->string('sub_title');
+            $table->text('description');
+            $table->string('resource')->nullable();
+                        
+            $table->unique(['other_id', 'locale']);
+            $table->foreign('other_id')->references('id')->on('others')->onDelete('cascade');
         });
     }
 

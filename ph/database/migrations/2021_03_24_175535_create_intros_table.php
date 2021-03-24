@@ -15,6 +15,8 @@ class CreateIntrosTable extends Migration
     {
         Schema::create('intros', function (Blueprint $table) {
             $table->id();
+            $table->string('hex_code')->nullable();
+            $table->string('pdf')->nullable();
             $table->timestamps();
         });
     }

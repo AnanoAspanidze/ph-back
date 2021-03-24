@@ -15,7 +15,12 @@ class CreateRegionTranslationsTable extends Migration
     {
         Schema::create('region_translations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('region_id')->unsigned();
+            $table->string('locale')->index();
+            $table->string('name');
+        
+            $table->unique(['region_id', 'locale']);
+            $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');
         });
     }
 

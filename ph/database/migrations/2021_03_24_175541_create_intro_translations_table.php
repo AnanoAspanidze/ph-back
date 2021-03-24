@@ -15,7 +15,14 @@ class CreateIntroTranslationsTable extends Migration
     {
         Schema::create('intro_translations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('intro_id')->unsigned();
+            $table->string('locale')->index();
+            
+            $table->string('sub_title');
+            $table->text('description');
+                        
+            $table->unique(['intro_id', 'locale']);
+            $table->foreign('intro_id')->references('id')->on('intros')->onDelete('cascade');
         });
     }
 
