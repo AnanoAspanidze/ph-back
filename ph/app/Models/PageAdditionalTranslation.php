@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class PageAdditionalTranslation extends Model
 {
-    //
+    public $timestamps = false;
+    protected $fillable = ['title', 'description'];
 }

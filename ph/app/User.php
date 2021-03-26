@@ -16,7 +16,16 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'position_id',
+        'region_id',        
+        'name',
+        'surname',
+        'position_name',
+        'work_place',
+        'email',
+        'password',
+        'approve',
+        'active'
     ];
 
     /**
@@ -36,4 +45,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function resume() {
+        return $this->belongsTo('App\Models\Position', 'position_id');
+    }
+
+    public function parent() {
+        return $this->belongsTo('App\Models\Region', 'region_id');
+    }
 }

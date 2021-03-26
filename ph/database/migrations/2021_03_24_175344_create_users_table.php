@@ -24,11 +24,11 @@ class CreateUsersTable extends Migration
             $table->string('position_name')->nullable();
             $table->string('work_place');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('approve')->default(false);
             $table->boolean('active')->default(true);
             $table->rememberToken();
+            $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
             
