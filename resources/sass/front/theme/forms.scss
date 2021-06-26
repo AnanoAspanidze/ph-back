@@ -1,0 +1,720 @@
+.form {
+    text-align: left;
+    color: $black;
+    &__section {
+        padding: 20px 0 60px;
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+        max-width: 434px;
+        @media #{$breakpoint-lg} {
+            max-width: 444px;
+        }
+        @media #{$breakpoint-xl} {
+            max-width: 564px;
+        }
+        @media #{$breakpoint-xl-ex} {
+            max-width: 526px;
+        }
+        &__title {
+            color: $black;
+            font-family: $firagoBold;
+            margin-bottom: 21px;
+            font-size: 21px;
+            @media #{$breakpoint-md} {
+                font-size: 34px;
+                margin-bottom: 34px;
+            }
+            @media #{$breakpoint-xl} {
+                font-size: 55px;
+            }
+        }
+        &__text {
+            font-family: $firagoRegular;
+            font-size: 16px;
+            color: $component-color2;
+            margin-bottom: 34px;
+            @media #{$breakpoint-md} {
+                font-size: 21px;
+                margin-bottom: 55px;
+            }
+            &__line {
+                border-bottom: 2px dashed $component-color2;
+                line-height: 0.1em;
+                margin: 34px auto;
+                @media #{$breakpoint-md} {
+                    margin: 55px auto;
+                }
+                span {
+                    background-color: $white;
+                    padding: 0 50px;
+                }
+            }
+            &-sm {
+                color: $black;
+                font-size: 16px;
+                font-family: $firagoRegular;
+                &-link {
+                    font-family: $firagoRegular;
+                    color: $component-color2;
+                    text-decoration: underline;
+                    display: block;
+                    @media #{$breakpoint-md} {
+                        display: inline-block;
+                    }
+                    .icon {
+                        stroke: $component-color2;
+                        width: 12px;
+                        height: 12px;
+                        text-decoration: none;
+                        margin-left: 10px;
+                    }
+                    &:hover {
+                        color: $component-color2-darken;
+                        .icon {
+                            stroke: $component-color2-darken;
+                        }
+                    }
+                    &.sm {
+                        font-size: 13px;
+                        .icon {
+                            width: 8px;
+                            height: 8px;
+                            margin-left: 5px;
+                        }
+                    }
+                }
+            }
+        }
+        &__btn {
+            &-cont {
+                display: flex;
+                flex-direction: column;
+            }
+            &-social {
+                width: 100%;
+                background: gray;
+                margin-bottom: 21px;
+                font-size: 16px;
+                font-family: $firagoMedium;
+                color: $white;
+                padding: 10px 0;
+                position: relative;
+                border-radius: 8px;
+                transition: 0.3s;
+                .icon {
+                    height: 22px;
+                    width: 22px;
+                    fill: $white;
+                    position: absolute;
+                    left: 12px;
+                }
+                &.fb {
+                    background-color: $fb-color;
+                    &:hover {
+                        color: $white;
+                        text-decoration: none;
+                        background-color: darken($fb-color, 5%);
+                    }
+                }
+                &.google {
+                    background-color: $google-color;
+                    &:hover {
+                        color: $white;
+                        text-decoration: none;
+                        background-color: darken($google-color, 5%);
+                    }
+                }
+            }
+        }
+    }
+    &-group {
+        margin-bottom: 34px;
+    }
+    &__label {
+        font-family: $firagoMedium;
+        font-size: 16px;
+        margin-bottom: 7px;
+        &.error {
+            color: $error-red;
+        }
+        &.required {
+            &:after {
+                content: "*";
+                color: $error-red;
+                margin-left: 5px;
+            }
+        }
+    }
+    &__input {
+        border-radius: 8px;
+        border: 1px solid $component-color2;
+        color: $black;
+        font-size: 16px;
+        font-family: $firagoRegular;
+        &::-webkit-input-placeholder {
+            color: rgba($color: $black, $alpha: 0.3);
+        }
+        &::-moz-placeholder {
+            color: rgba($color: $black, $alpha: 0.3);
+        }
+        &:-ms-input-placeholder {
+            color: rgba($color: $black, $alpha: 0.3);
+        }
+        &:-moz-placeholder {
+            color: rgba($color: $black, $alpha: 0.3);
+        }
+        &:focus::placeholder {
+            color: transparent;
+        }
+        &-relative {
+            position: relative;
+            .icon {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+                width: 22px;
+                height: 22px;
+                stroke: $component-color2;
+                fill: $white;
+                cursor: pointer;
+            }
+        }
+    }
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        &__link {
+            font-family: $firagoRegular;
+            font-size: 16px;
+            color: $black;
+            text-decoration: underline;
+            &:hover {
+                color: $component-color2;
+            }
+        }
+        &__btn {
+            border-radius: 8px;
+            height: 40px;
+            line-height: 1;
+            // display: block;
+            text-align: center;
+            font-family: $firagoMedium;
+            font-size: 16px;
+            padding: 10px 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @media #{$breakpoint-md} {
+                padding: 10px 100px;
+            }
+            &:focus {
+                outline: none;
+            }
+            &-login {
+                &.mobile {
+                    padding: 10px 45px;
+                    @media #{$breakpoint-md} {
+                        padding: 10px 100px;
+                    }
+                }
+            }
+            &-sm {
+                max-width: 200px;
+            }
+        }
+    }
+    .invalid-feedback {
+        color: $error-red;
+        font-size: 13px;
+        font-family: $firagoRegular;
+    }
+    &__error__message {
+        font-size: 13px;
+        font-family: $firagoRegular;
+        color: $error-red;
+        text-align: center;
+        margin-top: 30px;
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+}
+
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+    border-color: $error-red;
+    & + .icon {
+        top: 20px;
+    }
+}
+
+.language__mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
+    .dropdown__elem--gray {
+        color: rgba($color: $black, $alpha: 0.3);
+    }
+    @media #{$breakpoint-sm} {
+        display: none;
+    }
+}
+
+/*dropdown*/
+.dropdown__elem {
+    transition: 0.3s;
+    position: relative;
+    width: 50px;
+    border: 2px solid transparent;
+    background: $white;
+    border-bottom: 0;
+    &.language__desktop {
+        display: none;
+        @media #{$breakpoint-sm} {
+            display: block;
+        }
+    }
+    &.form-select {
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid $component-color2;
+        color: $black;
+        font-size: 16px;
+        font-family: $firagoRegular;
+        &.open {
+            border-bottom: transparent;
+        }
+        .dropdown__elem {
+            &--inner {
+                justify-content: space-between;
+                .icon {
+                    stroke: $component-color2;
+                    fill: $component-color2;
+                    width: 12px;
+                }
+                span {
+                    color: rgba($color: $black, $alpha: 0.3);
+                    &.active {
+                        color: $black;
+                    }
+                }
+            }
+        }
+        .dropdown {
+            width: 100.8%;
+            &__item {
+                margin: 5px 10px;
+                text-align: left;
+                padding: 0 10px;
+                color: $component-color2;
+                font-family: $firagoMedium;
+                font-size: 13px;
+                border-radius: 8px;
+                &:hover {
+                    background-color: $component-color2;
+                    color: $white;
+                }
+            }
+        }
+    }
+    &--inner {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: $firagoRegular;
+        .text--active {
+            transition: 0.6s;
+            color: $black;
+            line-height: 2;
+        }
+        .icon {
+            fill: $black;
+            transition: 0.6s;
+            width: 8px;
+            height: 8px;
+            margin-left: 7px;
+        }
+    }
+    &.open {
+        border-left: 2px solid $component-color2;
+        border-top: 2px solid $component-color2;
+        border-right: 2px solid $component-color2;
+        border-radius: 8px 8px 0 0;
+        .dropdown__elem--inner .icon {
+            transform: rotate(180deg);
+        }
+    }
+}
+.dropdown {
+    position: absolute;
+    left: -2px;
+    z-index: 1;
+    background: $white;
+    top: calc(100%-2px);
+    -webkit-box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.26);
+    box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.26);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 50px;
+    border: 2px solid transparent;
+    border-top: 0;
+    &.open {
+        opacity: 1;
+        visibility: visible;
+        border-left: 2px solid $component-color2;
+        border-bottom: 2px solid $component-color2;
+        border-right: 2px solid $component-color2;
+        border-radius: 0 0 8px 8px;
+        left: -2px;
+    }
+    &__nav {
+        width: 100%;
+        .dropdown__item {
+            list-style-type: none;
+            text-align: center;
+            cursor: pointer;
+            line-height: 2;
+            font-family: $firagoRegular;
+            color: $black;
+            font-size: 16px;
+            transition: 0.3s;
+            &:hover {
+                background: rgba(96, 112, 190, 0.14);
+            }
+        }
+    }
+}
+/*dropdown*/
+
+/*dropdown for sorting*/
+.dropdown__elem.form-select {
+    &.sort {
+        width: 165px;
+        border: none;
+        .dropdown {
+            &__elem {
+                &--inner {
+                    font-family: $firagoMedium;
+                    span {
+                        color: $black;
+                        font-size: 12px;
+                    }
+                    .icon {
+                        fill: $black;
+                        stroke: $black;
+                        width: 10px;
+                    }
+                }
+            }
+            &__item {
+                color: rgba($color: $black, $alpha: 0.6);
+                &:hover {
+                    color: $black;
+                    border-radius: 8px;
+                    background-color: $component-color4;
+                }
+            }
+            &.open {
+                border: 2px solid $component-color2;
+                border-radius: 8px;
+            }
+        }
+    }
+}
+
+/*dropdown for sorting*/
+
+// custom checkbox
+
+.checkbox {
+    &-container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 18px;
+        cursor: pointer;
+        font-family: $firagoMedium;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        font-size: 14px;
+        @media #{$breakpoint-xxl} {
+            font-size: 16px;
+        }
+        &:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+            &:checked ~ .checkmark {
+                background-color: $component-color2;
+                &:after {
+                    display: block;
+                }
+            }
+        }
+        /* Create a custom checkbox */
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            border-radius: 2px;
+            background-color: $component-color3;
+            border: 1px solid $component-color2;
+            &:after {
+                content: "";
+                position: absolute;
+                display: none;
+                left: 6px;
+                top: 2px;
+                width: 7px;
+                height: 12px;
+                border: solid $white;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+    }
+    &-link {
+        color: $component-color2;
+        text-decoration: underline;
+        &:hover {
+            color: $component-color2-darken;
+        }
+    }
+}
+
+// custom radio button
+
+.radiobutton__container {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: $firagoMedium;
+    color: rgba($color: $black, $alpha: 0.6);
+    user-select: none;
+    &:first-child {
+        margin-right: 50px;
+    }
+    &:hover input ~ .checkmark {
+        background-color: $component-color1;
+    }
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        &:checked ~ .checkmark {
+            background-color: $white;
+        }
+        &:checked ~ .checkmark:after {
+            display: block;
+        }
+    }
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: $component-color3;
+        border: 1px solid $component-color2;
+        border-radius: 50%;
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: $component-color2;
+        }
+    }
+}
+
+/** Custom Select **/
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+    &-wrapper {
+        position: relative;
+        display: inline-block;
+        user-select: none;
+        select {
+            display: none;
+        }
+    }
+    &-trigger {
+        width: 125px;
+        position: relative;
+        transition: 0.3s;
+        cursor: pointer;
+        font-family: $firagoMedium;
+        color: $black;
+        font-size: 12px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px 0 20px;
+        @media #{$breakpoint-xxs} {
+            width: 165px;
+        }
+        &:after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 10px;
+            height: 10px;
+            background-image: url("../img/icons/arrow-drop-down.svg");
+            background-size: contain;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            transition: all 0.4s ease-in-out;
+        }
+    }
+    &.opened .custom-select-trigger:after {
+        transform: rotate(180deg);
+        top: 0;
+    }
+    &.opened .custom-options {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        transform: translateY(10px);
+        border: 2px solid $component-color2;
+        border-radius: 8px;
+    }
+}
+
+.custom-options {
+    position: absolute;
+    z-index: 1;
+    background: $white;
+    top: 100%;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.26);
+    box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.26);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border: 2px solid transparent;
+    pointer-events: none;
+    transform: translateY(-15px);
+}
+
+.custom-option {
+    position: relative;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    line-height: 2;
+    color: rgba($color: $black, $alpha: 0.6);
+    transition: 0.3s;
+    margin: 5px 10px;
+    text-align: left;
+    padding: 0 10px;
+    font-family: $firagoMedium;
+    font-size: 13px;
+    &:hover {
+        color: $black;
+        border-radius: 8px;
+        background-color: $component-color4;
+    }
+}
+
+.form-register {
+    .custom-select {
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid $component-color2;
+        &-wrapper {
+            display: block;
+            width: 100%;
+        }
+        &-trigger {
+            width: 100%;
+            padding: 8px 20px 8px 12px;
+            font-family: $firagoRegular;
+            font-size: 16px;
+            color: rgba($color: $black, $alpha: 0.3);
+            &.selected {
+                color: $black;
+            }
+            &:after {
+                right: 20px;
+                width: 13.65px;
+                background-image: url("../img/icons/arrow-dropdown-blue.svg");
+            }
+        }
+        &.opened {
+            border: 2px solid $component-color2;
+            border-bottom: transparent;
+            border-radius: 8px 8px 0 0;
+            .custom-options {
+                border-top: transparent;
+                border-radius: 0 0 8px 8px;
+                width: 101.4%;
+                left: -2px;
+                top: 28px;
+                @media only screen and (min-width: 340px){
+                    width: 101%;
+                }
+                @media #{$breakpoint-lg} {
+                    width: 100.8%;
+                    top: 29px;
+                }
+            }
+            .custom-select-trigger:after {
+                transform: translateY(-50%) rotate(180deg);
+                top: 50%;
+            }
+        }
+    }
+    .custom-option {
+        color: $component-color2;
+        border-radius: 8px;
+        &:hover {
+            background-color: $component-color2;
+            color: $white;
+        }
+    }
+}

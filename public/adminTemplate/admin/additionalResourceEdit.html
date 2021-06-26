@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ადმინისტრატორის პანელი</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            ადმინისტრატორი
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <div class="dropdown-divider"></div>
+            <a href="index.html" class="dropdown-item">
+              ადმინისტრატორის პანელი
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="editProfile.html" class="dropdown-item">
+              პროფილის რედაქტირება
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              გამოსვლა
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+            <i class="fas fa-expand-arrows-alt"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-link" style="font-size: 14px;">
+        <span class="brand-text font-weight-light">ადმინისტრატორის პანელი</span>
+      </a>
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- SidebarSearch Form -->
+        <div class="form-inline mt-2">
+          <div class="input-group" data-widget="sidebar-search">
+            <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn btn-sidebar">
+                <i class="fas fa-search fa-fw"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
+              <a href="themes.html" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  თემები
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="studentResource.html" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  მოსწავლის რესურსი
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="teacherResource.html" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  განმანათლებლის რესურსი
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="teachers.html" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  განმანათლებლები
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="additionalResources.html" class="nav-link active">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  დამატებითი რესურსები
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="languages.html" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  ენები
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="websiteTexts.html" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  საიტის ტექსტები
+                </p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-12 col-md-10 m-auto">
+              <h4 class="m-0">დამატებითი რესურსის რედაქტირება</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Main content -->
+      <section class="content">
+        <p style="color:red;">აქ აღარ გადმოვიტანე - დამატების მსგავსია და იმის მიხედვით, თუ რა ტიპი იქნება, სხვადასხვა ველი გამოვა.</p>
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer"></footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- jQuery -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
+  <!-- Bootstrap 4 -->
+  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- ChartJS -->
+  <script src="plugins/chart.js/Chart.min.js"></script>
+  <!-- Sparkline -->
+  <script src="plugins/sparklines/sparkline.js"></script>
+  <!-- JQVMap -->
+  <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+  <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+  <!-- jQuery Knob Chart -->
+  <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+  <!-- daterangepicker -->
+  <script src="plugins/moment/moment.min.js"></script>
+  <script src="plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- Tempusdominus Bootstrap 4 -->
+  <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+  <!-- Summernote -->
+  <script src="plugins/summernote/summernote-bs4.min.js"></script>
+  <!-- overlayScrollbars -->
+  <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/adminlte.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="dist/js/demo.js"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <script src="dist/js/pages/dashboard.js"></script>
+  <!-- <script>
+    $(document).ready(function () {
+      $("#resourceTypeSelect").change(function () {
+        var val = $(this).val();
+        if (val == "ლინკი" || val == "ვიდეო" ) {
+          $(".addResourceLink").addClass('active');
+        }
+        else {
+          $(".addResourceLink").removeClass('active');
+        }
+        if (val == "pdf ფაილი" ) {
+          $(".addResourceFile").addClass('active');
+        }
+        else {
+          $(".addResourceFile").removeClass('active');
+        }
+        if (val == "ფოტო" || val == "pdf ფაილი" || val == "ლინკი" ) {
+          $(".addResourceImage").addClass('active');
+        }
+        else {
+          $(".addResourceImage").removeClass('active');
+        }
+      });
+    });
+
+    var loadFile = function (event) {
+      var image = document.getElementById('output');
+      image.src = URL.createObjectURL(event.target.files[0]);
+    };
+  </script> -->
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+---
+layout: default
+title: მოსწავლეების რესურსი
+---
+
+<div class="container">
+    <section class="page__nav">
+        <ul class="page__nav__list">
+            <li class="page__nav__list__item">
+                <a href="index.html" class="page__nav__list__item-link">მთავარი</a>
+            </li>
+            <li class="page__nav__list__item">
+                <svg class="icon">
+                    <use xlink:href="#ico-chevron-right"></use>
+                </svg>
+            </li>
+            <li class="page__nav__list__item">
+                <a href="register.html" class="page__nav__list__item-link">რეგისტრაცია</a>
+            </li>
+        </ul>
+    </section>
+    <section class="form__section">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="form__section__title">რეგისტრაცია</h1>
+                <p class="form__section__text">ავტორიზაცია შესაძლებელია მხოლოდ განმანათლებლებისთვის</p>
+                <form class="form">
+                    <div class="form-group">
+                        <label for="region" class="form__label required">რეგიონი</label>
+                        <div class="dropdown__elem form-control form-select" id="2">
+                            <div class="dropdown__elem--inner dropdown--toggler">
+                                <span class="text--active dropdown--selected">
+                                   აირჩიეთ რეგიონი
+                                </span>
+                                <svg class="icon">
+                                    <use xlink:href="#arrow-dropdown"></use>
+                                </svg>
+                            </div>
+                            <div class="dropdown" data-for="2">
+                                <nav class="dropdown__nav">
+                                    <li class="dropdown__item dropdown__item--active" value="0">თბილისი</li>
+                                    <li class="dropdown__item" value="1">მცხეთა</li>
+                                    <li class="dropdown__item" value="2">რუსთავი</li>
+                                    <li class="dropdown__item" value="3">ბათუმი</li>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="position" class="form__label required">პოზიცია</label>
+                        <div class="dropdown__elem form-control form-select" id="3">
+                            <div class="dropdown__elem--inner dropdown--toggler">
+                                <span class="text--active dropdown--selected">
+                                   აირჩიეთ პოზიცია
+                                </span>
+                                <svg class="icon">
+                                    <use xlink:href="#arrow-dropdown"></use>
+                                </svg>
+                            </div>
+                            <div class="dropdown" data-for="3">
+                                <nav class="dropdown__nav">
+                                    <li class="dropdown__item dropdown__item--active" value="0">მასწავლებელი</li>
+                                    <li class="dropdown__item" value="1">სამართალდამცავი</li>
+                                    <li class="dropdown__item select_other" value="2">სხვა</li>
+                                </nav>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control form__input mt-2" id="txtData" placeholder="თქვენი პოზიცია" style="display:none;"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="workingPlace" class="form__label">სამუშაო ადგილი</label>
+                        <input type="workingPlace" class="form-control form__input" id="workingPlace">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form__label required">ელ. ფოსტა</label>
+                        <input type="email" class="form-control form__input" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="form__label required">სახელი</label>
+                        <input type="name" class="form-control form__input" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="surname" class="form__label required">გვარი</label>
+                        <input type="surname" class="form-control form__input" id="surname">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="form__label required">პაროლი</label>
+                        <input type="password" class="form-control form__input" id="password">  
+                    </div>
+                    <div class="form-group">
+                        <label for="repeatPassword" class="form__label required">გაიმეორეთ პაროლი</label>
+                        <input type="repeatPassword" class="form-control form__input" id="repeatPassword">  
+                    </div>
+                    <label class="checkbox-container mt-4">
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                        ვეთახმები პლატფორმის <a href="termsOfUse.html" class="checkbox-link">მოხმარების პირობებს</a> 
+                      </label>
+                      <label class="checkbox-container mb-4">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        გავეცანი <a href="privacy.html" class="checkbox-link">კონფიდენციალურობის პოლიტიკას</a> 
+                      </label>
+                    <div class="form__row">
+                        <button type="submit" class="form__row__btn form__row__btn-login bt-blue w-100">რეგისტრაცია</button>
+                    </div>
+                    <p class="form__error__message">გთხოვთ შეავსოთ ყველა ველი</p>
+                </form>
+                <div class="form__section__text__line">
+                    <span>ან</span>
+                </div>
+                <div class="form__section__btn-cont">
+                    <a href="#" class="form__section__btn-social fb">
+                        <svg class="icon">
+                            <use xlink:href="#icon-fb"></use>
+                        </svg>
+                        ავტორიზაცია Facebook-ით</a>
+                    <a href="#" class="form__section__btn-social google">
+                        <svg class="icon">
+                            <use xlink:href="#icon-google"></use>
+                        </svg>
+                        ავტორიზაცია Gmail-ით</a>
+                </div>
+                <div class="form__section__text-sm">
+                    <span>უკვე რეგისტრირებული ხართ? </span>
+                    <a href="login.html" class="form__section__text-sm-link">
+                        მიყევით ამ ბმულს
+                        <svg class="icon">
+                            <use xlink:href="#feather-arrow-up-right"></use>
+                          </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

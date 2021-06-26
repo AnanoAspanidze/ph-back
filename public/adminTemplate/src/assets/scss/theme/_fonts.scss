@@ -1,0 +1,54 @@
+@mixin font-face($font-family, $url) {
+    @font-face {
+      font-family: '#{$font-family}';
+      // src: url('#{$url}.eot');
+      // src: url('#{$url}.eot?#iefix') format('embedded-opentype'),
+      src: url('#{$url}.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+  }
+  
+  @include font-face('firagoBold', '../fonts/FiraGO-Bold');
+  @include font-face('firagoSemiBold', '../fonts/FiraGO-SemiBold');
+  @include font-face('firagoMedium', '../fonts/FiraGO-Medium');
+  @include font-face('firagoRegular', '../fonts/FiraGO-Regular');
+  @include font-face('firagoExtraBold', '../fonts/FiraGO-ExtraBold');
+    // @include font-face('firagoBlack', '../fonts/FiraGO-Black');
+  // @include font-face('firagoItalic', '../fonts/FiraGO-Italic');
+  
+  // Fonts
+  $fonts: 'firagoRegular';
+  
+  $firagoBold: 'firagoBold';
+  $firagoSemiBold: 'firagoSemiBold';
+  $firagoMedium: 'firagoMedium';
+  $firagoRegular: 'firagoRegular';
+  $firagoExtraBold: 'firagoExtraBold';
+  // $firagoItalic: 'firagoItalic';
+  // $firagoBlack: 'firagoBlack';
+  
+  .firagoSemiBold{
+    font-family: $firagoSemiBold;
+  }
+  .firagoBold{
+    font-family: $firagoBold;
+  }
+  .firagoMedium{
+    font-family: $firagoMedium;
+  }
+  .firagoRegular{
+    font-family: $firagoRegular;
+  }
+  .firagoExtraBold{
+    font-family: $firagoExtraBold;
+  }
+  // .firagoItalic{
+  //   font-family: $firagoItalic;
+  // }
+  // .firagoBlack{
+  //   font-family: $firagoBlack;
+  // }
+  
+  
+  

@@ -1,0 +1,86 @@
+.nav-sidebar .nav-link{
+    font-size: 13px;
+}
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.card-header-right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+.card-header-title{
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 0;
+}
+.card-header-btn{
+    margin-right: 10px;
+}
+.form-check-input:hover{
+    cursor: pointer;
+}
+.table-img{
+    height: 100px;
+    width: 160px;
+    object-fit: contain;
+}
+.resource__theme__item{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.resource__theme__item__img{
+    height: 100px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+.resource__theme__item__title{
+    color: black;
+    font-size: 18px;
+}
+
+.resourceTypeSelectLink{
+    display: none;
+}
+.resourceTypeSelectLink.active{
+    display: block;
+}
+.output-img{
+    margin-top: 10px;
+    display: block;
+    width: 300px;
+    object-fit: contain;
+}
+
+.mainDataTable-link{
+    color: black;
+}
+
+.addResourceLink{
+    display: none;
+}
+.addResourceLink.active{
+    display: block;
+}
+.addResourceFile{
+    display: none;
+}
+.addResourceFile.active{
+    display: block;
+}
+.addResourceImage{
+    display: none;
+}
+.addResourceImage.active{
+    display: block;
+}
+
+/* 
+დამატებითი რესურსის ატვირთვისას და შეცვლისას: 
+თუ აირჩევენ ლინკს, ფაილის ატვირთვის მაგივრად უნდა ჩანდეს ლინკის ჩაწერა. ვიდეოს არჩევის შემთხვევაში ლინკი უნდა ჩანდეს */

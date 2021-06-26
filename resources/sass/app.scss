@@ -1,0 +1,77 @@
+// // Fonts
+// @import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// // Variables
+// @import 'variables';
+
+// // Bootstrap
+// @import '~bootstrap/scss/bootstrap';
+
+// /* ***** Master Stylesheet ***** */
+// @import 'front/theme/reset';
+
+// /* ***** Import All CSS Plugins */
+// // @import '../vendors/css/bootstrap.min.css';
+// // @import '../vendors/css/swiper-bundle.min.css';
+
+// // *******************
+// //     utilities
+// // *******************
+// @import 'front/theme/color';
+// @import 'front/theme/fonts';
+// @import 'front/theme/variables';
+// @import 'front/theme/responsive';
+
+
+// //     stylesheet
+// // *******************
+// @import 'front/theme/modals';
+// @import 'front/theme/forms';
+// @import 'front/theme/cards';
+
+// //partials
+// @import 'front/theme/navigation';
+// @import 'front/theme/footer';
+
+
+// //    pages
+// // *******************
+// @import 'front/pages/main';
+// @import 'front/pages/themes';
+// @import 'front/pages/resources';
+
+
+/* ***** Master Stylesheet ***** */
+@import 'front/theme/reset';
+
+/* ***** Import All CSS Plugins */
+@import 'front/vendors/css/bootstrap.min.css';
+@import 'front/vendors/css/swiper-bundle.min.css';
+
+// *******************
+//     utilities
+// *******************
+@import 'front/theme/color';
+@import 'front/theme/fonts';
+@import 'front/theme/variables';
+@import 'front/theme/responsive';
+
+
+//     stylesheet
+// *******************
+@import 'front/theme/modals';
+@import 'front/theme/forms';
+@import 'front/theme/cards';
+
+//partials
+@import 'front/theme/navigation';
+@import 'front/theme/footer';
+
+
+//    pages
+// *******************
+@import 'front/pages/main';
+@import 'front/pages/themes';
+@import 'front/pages/resources';
+@import 'front/pages/about';
+@import 'front/pages/games';

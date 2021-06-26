@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0,user-scalable=0, shrink-to-fit=no">
+    <title>მოსწავლეების რესურსი</title>
+    <link rel="icon" href="assets/img/icons/logo.ico" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+     <!--svg sprite all used icons-->
+     <svg width="0" height="0" class="hidden d-none">
+      <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.825 5" id="arrow-dropdown">
+        <path d="M0 0l3.413 5 3.413-5z"></path>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.223 15.064" id="metro-user">
+        <path d="M9.27 10.477v-.961a5.176 5.176 0 002.318-4.3c0-2.88 0-5.215-3.476-5.215S4.635 2.335 4.635 5.216a5.176 5.176 0 002.317 4.3v.956c-3.93.326-6.951 2.257-6.951 4.592h16.222c0-2.335-3.022-4.267-6.953-4.588z"></path>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.621 15.621" id="ico-search">
+        <path xmlns="http://www.w3.org/2000/svg" fill="none" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15.167,9.833A5.333,5.333,0,1,1,9.833,4.5,5.333,5.333,0,0,1,15.167,9.833Z" transform="translate(-3 -3)"/><path xmlns="http://www.w3.org/2000/svg" fill="none" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M27.875,27.875l-2.9-2.9" transform="translate(-14.375 -14.375)"></path>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="close">
+        <path d="M19.373 16.344l-6.346-6.346 6.346-6.346A2.14 2.14 0 1016.346.625L10 6.971 3.654.625A2.14 2.14 0 10.627 3.652l6.346 6.346-6.346 6.346a2.14 2.14 0 103.027 3.027L10 13.025l6.346 6.346a2.14 2.14 0 103.027-3.027z"></path>
+      </symbol>
+      <symbol viewBox="0 0 6.7 11" xmlns="http://www.w3.org/2000/svg" id="ico-chevron-right">
+        <path d="M6.5,5.3c0,0.3-0.1,0.5-0.3,0.7l-4.3,4.3c-0.4,0.4-1,0.4-1.4,0c-0.4-0.4-0.4-1,0-1.4L4,5.3L0.5,2.1c-0.4-0.4-0.4-1-0.1-1.4	c0.4-0.4,1-0.4,1.4-0.1l4.3,3.9C6.4,4.8,6.5,4.9,6.5,5.3L6.5,5.3z"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.971 18.706" id="feather-eye">
+      <path xmlns="http://www.w3.org/2000/svg" fill="" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1.5,14.353S5.677,6,12.986,6s11.486,8.353,11.486,8.353-4.177,8.353-11.486,8.353S1.5,14.353,1.5,14.353Z" transform="translate(-.5 -5)"/><path xmlns="http://www.w3.org/2000/svg" fill="" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.765,16.632A3.132,3.132,0,1,1,16.632,13.5,3.132,3.132,0,0,1,19.765,16.632Z" transform="translate(-4.147 -7.279)"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.197 21.629" id="icon-google">
+      <path d="M10.815 9.269v3.709h6.134a5.839 5.839 0 01-6.134 4.663 6.827 6.827 0 010-13.652 6.087 6.087 0 014.312 1.666l2.933-2.828A10.377 10.377 0 0010.815 0a10.815 10.815 0 000 21.629c6.242 0 10.382-4.388 10.382-10.568a9.853 9.853 0 00-.17-1.793z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.028 22.458" id="icon-fb">
+      <path d="M11.24 12.633l.624-4.064h-3.9V5.931a2.032 2.032 0 012.291-2.2h1.773V.275A21.621 21.621 0 008.881 0C5.67 0 3.57 1.947 3.57 5.471v3.1H0v4.064h3.57v9.825h4.394v-9.827z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.992 11.992" id="feather-arrow-up-right">
+      <path xmlns="http://www.w3.org/2000/svg" fill="" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.5,19.664,19.664,10.5" transform="translate(-9.086 -9.086)"/><path xmlns="http://www.w3.org/2000/svg" fill="none" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.5,10.5h9.164v9.164" transform="translate(-9.086 -9.086)"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.957 16.249" id="youtube">
+      <path d="M3.047 15.822a47.917 47.917 0 006.432.427 47.918 47.918 0 006.432-.423 3.517 3.517 0 003.047-3.48v-8.44a3.517 3.517 0 00-3.047-3.48 48.708 48.708 0 00-12.864 0A3.517 3.517 0 000 3.906v8.436a3.517 3.517 0 003.047 3.48zM7.3 6.567a1.158 1.158 0 011.784-.975l2.654 1.693a.982.982 0 010 1.652L9.084 10.63A1.158 1.158 0 017.3 9.655z"></path>
+    </symbol>
+    </svg>
+    <!--svg sprite all used icons end-->
+    <div class="page active">
+      <!--all modals here-->
+      <div class="modal fade" id="fullscreenImgModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen" id="modal-image-fullscreen">
+          <div class="modal-content" id="image-fullscreen">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+      </div>      <!--******-->
+      <div class="page__main">
+        <header class="header" id="header">
+          <div class="container">
+            <div class="header__container">
+              <a href="index.html" class="header__logo__container">
+                <img src="assets/img/icons/logo.svg" alt="სამართლებრივი კულტურა" class="header__logo__img">
+                <h1 class="header__logo">სამართლებრივი კულტურა</h1>
+              </a>
+              <nav class="header__nav">
+                <ul class="header__nav__list">
+                  <li class="header__nav__item"><a href="#" class="header__nav__item-link active">ჩვენზე</a></li>
+                  <li class="header__nav__item"><a href="themes.html" class="header__nav__item-link">თემები</a></li>
+                  <li class="header__nav__item"><a href="resources.html" class="header__nav__item-link">რესურსები</a></li>
+                </ul>
+                <div class="header__nav__item">
+                  <a href="login.html" class="header__nav__btn bt-blue">
+                    <svg class="icon">
+                      <use xlink:href="#metro-user"></use>
+                    </svg>
+                    შესვლა
+                  </a>
+                </div>
+                <div class="header__nav__item">
+                  <a href="#" class="header__nav__search">
+                    <svg class="icon">
+                      <use xlink:href="#ico-search"></use>
+                    </svg>
+                  </a>
+                </div>
+                <div class="dropdown__elem" id="1">
+                  <div class="dropdown__elem--inner dropdown--toggler">
+                    <span class="text--active dropdown--selected">
+                      En
+                    </span>
+                    <svg class="icon">
+                      <use xlink:href="#arrow-dropdown"></use>
+                    </svg>
+                  </div>
+                  <div class="dropdown" data-for="1">
+                    <nav class="dropdown__nav">
+                      <li class="dropdown__item dropdown__item--active">En</li>
+                      <li class="dropdown__item">ქა</li>
+                    </nav>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </header>        <div class="page__content">
+<div class="container">
+    <section class="page__nav">
+        <ul class="page__nav__list">
+            <li class="page__nav__list__item">
+                <a href="index.html" class="page__nav__list__item-link">მთავარი</a>
+            </li>
+            <li class="page__nav__list__item">
+                <svg class="icon">
+                    <use xlink:href="#ico-chevron-right"></use>
+                </svg>
+            </li>
+            <li class="page__nav__list__item">
+                <a href="register.html" class="page__nav__list__item-link">მოხმარების პირობები</a>
+            </li>
+        </ul>
+    </section>
+    <article class="document__section">
+        <h1 class="document__title"> მოხმარების პირობები </h1>
+        <p class="document__text">
+            ლორემ იპსუმ სეირის ორღობეებს მაიკიანი, პიროვნეასაც ძუძუი სიც, ბაგის ეროტიკა დახურვით მოვალეობები.
+            აბობოქრებულ მიბჯენილ გავაწვალებ ვიღა კურთ, დავაძვრე ერთერთ, გორაკზე, განაჩენს, დაიკიდა, არაგველთან
+            მოცეკვავეში სიკეთეებით ზაკონებსა გზისკენ. თუნუქის გადაგარჩინოო ყყვარულით ვიღა იმდროინდელი, სიკეთეებით
+            ვეჯიბრებით გადაკვეთისათვის სიც წამოვროხეო ერთერთ გამიგონე. გზისკენ ცრუობდეს ბუდობენ ეროტიკა სისაძაგლის
+            ვეჯიბრებით წითლით მოუხდიდა დამიწდი გაემგზავროთ. აგეყოლიათ ვიღა გადახტა შეემთხვა, ჰშობს პიროვნეასაც
+            ლოკოკინებით პატივისათვის ხელმრუდობის იმდროინდელი, გამიგონე დახურვით სვეტი სეირის.
+            <span class="d-block mt-4">
+                უფალო ნაზავი
+                გამოგვიცდია კნეინასთვის მკლავებიდან, აბრეშუმი ადუღდეს ემიგრაციამდე აზროვნება. ქრისტიანულ ალა
+                მაწანწალისათვის ნივთეულობა კეთილშობილები წაუვიდოდა ამოიტანეს ცენტრად დამწიფებული. მოგიტან ზაფრანამ
+                წარწერით ლუკმად, წაიბორძიკა მკლავებიდან წაუვიდოდა მაწანწალისათვის ნურავის ბურკიაშვილის რიღასი
+                გაგიჟებით
+                გამხადა. გავიდგეთ ფიქრიო ავაყენო გალანძღავდა, ქრისტიანულ ადუღდეს აიძულო ემიგრაციამდე ძაღლებს
+                აზროვნება
+                რიღასი, ბოტასებით, წარმატებამ ამოვიკითხე. ლუკმად ძაღლებს შურდათ ზაფრანამ დაგემართებოდა ბოტასებით,
+                ნაზავი
+                გამოაგზავნესო.
+            </span>
+            <span class="d-block mt-4">
+                უდაბნოდ ვერდიქტს დარბაზბატონს გადმოგვცეს დაუფარა ღობეზე მაჭანკალიც. ბატკანიც ესოდენ
+                ჩემხელა დაჰღრღნა გამჭყლიტა დაამთავრებდა აფხაზები გოლვა, ჩასჭიდა ფართოფორმატიან მოისმის. აიმაღლებს
+                მაგონდებოდეს ბებრუხანები, ღობეზე სევდით მოაშორა ამორალურიაო მიმოფანტა ვარდნის დაამთავრებდა.
+                მაგონდებოდეს
+                გამოვადგები კონსტებლს ტასის ნაყოფია, მოისმის აფრინა მაჭანკალიც აფხაზები ბატკანიც. დაუვიწროვდა
+                შეჯამებით
+                ჰნახეთ, გასცეს შუბერტზე, შეწყობოდა, მიმოფანტა საწადელი გამჭყლიტა ხელიო სიბრძნისაგან სპეციალისტმა.
+                დამუნჯდა აიმაღლებს აფხაზები მომირჩენია შეწყობოდა სპეციალისტმა. შემცველობა ნაავაზაკარი სიბრძნისაგან
+                დავინახავდი, ვარდნის სრულიადაც, ცარიელი ადგილობრივმა ავადმყოფობას ამორალურიაო ხორცშესხმული შუბერტზე
+                ბატკანიც, გაგაკოტრო სიამოვნების.
+            </span>
+
+            <span class="d-block mt-4">
+                ტარზე ეზო აფთრებს ილუზიონის, მშობელ ორგიების შეჩერდი მეკობრეზე ელისბედი
+                მემონტაჟედ გვეყოლოს აღიზიანებდა. მფლანგველობა გახდებაო ორგიების შევიშალე ატკინა, თუთუნის
+                მიეთვისებინა
+                ჰყმუის საპატრიარქომ. დალიეს უნუგეშო მითამაშებიხართ მეკობრეზე გვეყოლოს დამაჯერებლობისთვის, შეშინებული
+                ლენონის ვვერაფერი, სამეგრელომ თავი დამაცადე ვვკითხოთ ხომალდად გაეგოთ. აფთრებს სძულთ ვრჩები ტარზე
+                ილუზიონის ჩვენად შემოსავლის მოუსწროს პირდაუბანელი კარგმა ურმულს დამაჯერებლობისთვის. ეშხსა მიიქცია
+                გადაუფორმეს სდგები მდინარეში, როგორცა საფქვავით სკოლისათვის ჩაიხუტოს, აბჯარში ტომში მარგილებსა,
+                ლუკინო
+                დევიზები შეძლებდნენ. ვთხოვ ნაწარმოების სამშაბათი, პიკნიკის მმოხდა
+            </span>
+            <span class="d-block mt-4">
+                ეშხსა თავლაფის კუჭისა დაინტერესებულან
+                გასინჯვას კუნძულს ბედი ილოცოთ. დაეკარგათ გამეცინებოდა სულმოთქმული მმოხდა სდგები, შეძლებდნენ
+                სამშაბათი.
+                მარე მასწავლებელი კიდებდნენ, მდგომარეობიდან საჭიროაო კუნძულს ჩულო შეძლებდნენ შემდგარს დაგიკლა
+                როგორცა,
+                აღბეჭდვის მოსდუნებია. ვარდამ გაეჩხირებოდა პიცა ურთხმელის მარე, იგლოვებს საჭიროაო. სულმოთქმული
+                გაიზარდა
+                მსუქან უპასუხებდა ღორებმა გამეცინებოდა ეშხსა სამყაროდან ყლუპად. გამეცინებოდა ერევანი აქაური ყრმობას
+                გაისვრის ეშხსა, არეული უნ გამოვსულიყავი. დასასრულამდე გვიგვინებითა გაშიშვლება, ბიზნესი ერევანი
+                დაგიკლა
+                ძნელსა მოათავა პიცა შემდგარს. დაბადებითვე მოქეიფე გაეჩხირებოდა დევიზები მივეცი დაგვეხმარება ღორებმა
+                არეული ჩულო გეტკინა, მიუძღვენი დაგიკლა ხართან. მუდარა მოქეიფე ვაბრახუნებდით მოსდუნებია, შეიცავს
+                მდგომარეობიდან მოათავა, ბიზნესი გაბზარულის დაინტერესებულან გამეცინებოდა სასულეს.
+            </span>
+            <span class="d-block mt-4">
+                მოაწყობთ აუგეს ვცემოთ
+                სულებს შეუცვალეს მამობა გულიც უმწეოს. არია მოტორიზებულ მანახებთ, შერთეს ჟურნალები გეი ჰკითხე
+                დადგებაო.
+                მოულოდნელობით ჩამოსხდნენ ველური თვინიერ, აირჩიეს ეკლესიას, შერთეს აუგეს ჩანჩქერს ვცემოთ ძალუძდა,
+                არია
+                მგზავრებს. მტრებს ნაჭრით მოტორიზებულ მანახებთ გადაწმენდილ ჩამოსხდნენ.
+            </span>
+            <span class="d-block mt-4">
+                მოსთხოვა გადაქცეულიყვნენ აურზაურს
+                ჯანი ლუარსაბსაც ჩამოფრინდნენ მომმართავდა დაჰყურებდა. დაჰკლა სათაყვანო შეჭრილან დახატეს ტევადი
+                სახვეწარი
+                გულგახეთქილნი, დარეულ ჩუენსა ნიშნისათვის დოინჯი ბერძნების მწყრალად გერბის. ამოსჯდომოდეს ბრაზისაგან
+                გვეტირებოდა სტერეოსკოპულ მეწერა მოელოდათ, დაჰყურებდა ფაქტიც. მოსასვლელი იგულისხმონ დახატეს აურზაურს
+                გვეტირებოდა, გათქვა ორბაკაიტეთი, გერბის გაუწევია დოინჯი, მეჯინიბეთუხუცესს გარდუვალს დააიმედა, სხვაც
+                მუშაობაში. სხვაც მოსთხოვა მიეშველნენ, გადასარევი გერბის დარეულ მუშაობაში გათქვა მწყრალად სათაყვანო,
+                დიასახლისებისგან დახატეს ღირსპატივსაცემი გრეის.
+            </span>
+            <span class="d-block mt-4">
+                დაგვცინებენო ტერიტორიაზე დიუსელდორფში, ჟორჯი სულიერ ოოჰ
+                დაკაწრული განსვენებული მნათობი წავა უწოდეს, უოლტერსი მაგრამე. ბუხარს გადაევლო გავაცოცხლო, მოხსნის,
+                ეხლაა
+                გადაყენებას შვედებს, ცოლებსა წისქვილებზე წავა მეუფესა საშუალებად გეკუთვნოდა უწოდეს განსაცდელშია.
+                დიუსელდორფში შემთხვევაც ბუხარს შეშფოთება მაიაკი დდააკისრა იჯარით ცნობისმოყვარეობითა დაგვცინებენო
+                უწოდეს
+                დაკაწრული. მიჰყოლია დაამცირებდა ყმადაო ხელშეუხებელ, ჟორჯი, მეგობრობისთვის ბიძამისს
+                ცნობისმოყვარეობითა
+                გაცოცხლებულის უკეთესობაზედ ოოჰ.
+            </span>
+            <span class="d-block mt-4">
+                გვირგვინს თავადები მმჯერა ადიდებენ კრიჭა, დამლაგებელს არემარეს მეტყოდე.
+                განსწავლული მაისურები გადამღალა მოენანია მესერს, დაუდექიო დაუპატიჟებელი გაზაფხულის მოსასხამებით
+                ჩამოსვლას გასჭრა. ნაწილ გულისხმობთ გვჭირდება ქედმაღლობისგან რუსებსაც გამოჰგლიჯა გადამღალა
+                მზეთუნახავიაო
+                ბალახსა სამიკიტნოს. დაუპატიჟებელი გაგტეხე აძრობდი, იშიშვლა, მოგტაცეს, სამიკიტნოს იმათსა ტუტრუცანა
+                ჰაველის.
+            </span>
+            <span class="d-block mt-4">
+                თევზების მიმტკიცებდა კულტმუშაკების ბილიკს წამოცდეს ილოცებ არქიეპისკოპოსმა. კულტმუშაკების
+                მივაკარებ ხატო არქიეპისკოპოსმა მისულები წინააღმდეგობას, კითხები, დავიწყებულ იმორცხვა ჩვეულებრივად
+                გამოსვლისასაც მთავრობა გასარჩევად. დაუბადებელი მთავრობა ნერ მკიდია სიამაყეს, ჭიქით ოთხშაბათობითა
+                გამოსვლისასაც. სანთლის ნამტირალევი კარიერით, უცხოთა, ილოცებ ბოძი ზურგთ გამოსვლისასაც კულტმუშაკების
+                გადატეხილიყო ფერმერსა ასო დაეწერა წინათგრძნობის. მიმტკიცებდა სიამაყეს დაე სთოხნიან უღონო დაუკლო.
+                მისულები მონაბარი ზაურს, ახვარია ოხუნჯობდა დაუბადებელი ბოძი წინათგრძნობის ღონიერს იწყებს თევზების
+                თავადიშვილია გულთმისნობა საკვირველებათა. ითხრიდეს ჩვენცა სიამაყეს გასარჩევად ჩაძვრა თავადიშვილია
+                მიგიწევს ფასადიც გაარშიყებას დაეწერა სამსჯავრო.
+            </span>
+        </p>
+        <div class="document__line"></div>
+        <div class="document__btn__container">
+            <a href="privacy.html" class="document__btn">კონფიდენციალურობა</a>
+        </div>
+    </article>
+</div>
+ <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <img src="assets/img/phinternational.svg" alt="ph-international">
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="row">
+                <div class="col-6 d-flex align-items-end">
+                    <p class="footer__text">
+                        ვებ-გვერდზე განთავსებული ინფორმაცია არ წარმოადგენს ამერიკის შეერთებული შტატების მთავრობის ოფიციალურ ინფორმაციას და არ ასახავს ამერიკის შეერთებული შტატების სახელმწიფო დეპარტამენტისა და ამერიკის შეერთებული შტატების მთავრობის შეხედულებებს
+                    </p>
+                </div>
+                <div class="col-6">
+                    <div class="footer__contact">
+                        <a href="mailto:info@school.ge" class="footer__link footer__item">info@school.ge</a>
+                        <div class="footer__line footer__item"></div>
+                        <a href="#" class="footer__item footer__contact__icon">
+                            <svg class="icon">
+                                <use xlink:href="#icon-fb"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer__item footer__contact__icon">
+                            <svg class="icon">
+                                <use xlink:href="#youtube"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="footer__contact mt-4">
+                        <a href="termsOfUse.html" class="footer__item footer__text black">
+                            მოხმარების პირობები
+                        </a>
+                        <div class="footer__line footer__item"></div>
+                        <a href="privacy.html" class="footer__item footer__text black">
+                            კონფიდენციალურობა
+                        </a>
+                        <div class="footer__line footer__item"></div>
+                        <p class="footer__item footer__text black">© 2021 ყველა უფლება დაცულია</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer></div>
+      </div>
+
+      <div class="search__container">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-10 m-auto">
+                  <div class="search__container__row">
+                    <h3 class="search__container__title">ჩაწერეთ საძიებო სიტყვა ან ფრაზა</h3>
+                    <div class="search__close">
+                      <svg class="icon">
+                        <use xlink:href="#close"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <form action="" class="search__container__form">
+                    <input type="search" class="search__container__form__input" placeholder="ძიება">
+                      <svg class="icon search__icon">
+                        <use xlink:href="#ico-search"></use>
+                      </svg>
+                  </form>
+                  <section class="search__result">
+                    <h1 class="search__result__title">ნაპოვნია (<span class="purple">7</span>) შედეგი</h1>
+                    <div class="document__line mg-sm"></div>
+                    <div class="search__result__section">
+                      <div>
+                        <h2 class="search__result__title margins">თემები</h2>
+                        <div class="row">
+                          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                            <a href="#" class="theme__item">
+                              <picture>
+                                <source srcset="assets/img/themes/theme1.webp" type="image/webp">
+                                <source srcset="assets/img/themes/theme1.png" type="image/png">
+                                <img src="assets/img/themes/theme1.png" alt="theme image" class="theme__item__img" />
+                              </picture>
+                              <h2 class="theme__item__title">ბავშთა უფლებები</h2>
+                            </a>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                            <a href="#" class="theme__item">
+                              <picture>
+                                <source srcset="assets/img/themes/theme2.webp" type="image/webp">
+                                <source srcset="assets/img/themes/theme2.png" type="image/png">
+                                <img src="assets/img/themes/theme2.png" alt="theme image" class="theme__item__img" />
+                              </picture>
+                              <h2 class="theme__item__title">ცხოვრების ჯანსაღი წესი</h2>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <h2 class="search__result__title margins mt">რესურსი და სხვა</h2>
+                        <div class="row">
+                          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                            <div class="resource__item">
+                              <div class="resource__item-relative">
+                                <img src="assets/img/resource-img.png" alt="resource image" class="resource__item__img"
+                                 data-toggle="modal" data-target="#fullscreenImgModal" />
+                                <div class="resource__item__icon__position">
+                                  <div class="resource__item__icon__container">
+                                    <div class="resource__item__icon__bg">
+                                      <img src="assets/img/icons/image.svg" alt="icon" class="resource__item__icon">
+                                    </div>
+                                    <div class="resource__item__icon__bg">
+                                      <img src="assets/img/icons/feather-download.svg" alt="icon" class="resource__item__icon">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <a href="#" class="resource__item-link">
+                                <h2 class="resource__item__title"><span class="search__result__word">სამართ</span>ლებრივი-კულტურა.jpg</h2>
+                                <p class="resource__item__description">ვინ არის <span class="search__result__word">სამართ</span>ალდამცავი</p>
+                              </a>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                            <div class="resource__item">
+                              <div class="resource__item-relative">
+                                <img src="assets/img/icons/file.svg" alt="resource image"
+                                class="resource__item__img file" data-toggle="modal" data-target="#fullscreenImgModal" />
+                                <div class="resource__item__icon__position">
+                                  <div class="resource__item__icon__container">
+                                    <div class="resource__item__icon__bg">
+                                      <img src="assets/img/icons/image.svg" alt="icon" class="resource__item__icon">
+                                    </div>
+                                    <div class="resource__item__icon__bg">
+                                      <img src="assets/img/icons/feather-download.svg" alt="icon" class="resource__item__icon">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <a href="#" class="resource__item-link">
+                                <h2 class="resource__item__title">ახალი წიგნი.pdf</h2>
+                                <p class="resource__item__description"><span class="search__result__word">სამართ</span>ლებრივი კულტურა</p>
+                              </a>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                            <div class="resource__item">
+                              <div class="resource__item-relative">
+                                <img src="assets/img/icons/feather-arrow-up-right.svg" alt="resource image"
+                                class="resource__item__img file" data-toggle="modal" data-target="#fullscreenImgModal" />
+                                <div class="resource__item__icon__position">
+                                  <div class="resource__item__icon__container">
+                                    <div class="resource__item__icon__bg">
+                                      <img src="assets/img/icons/feather-arrow-up-right.svg" alt="icon" class="resource__item__icon">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <a href="#" class="resource__item-link">
+                                <h2 class="resource__item__title underline">მოძრაობის წესები და ქვეითები</h2>
+                                <p class="resource__item__description"><span class="search__result__word">სამართ</span>ლებრივი კულტურა</p>
+                              </a>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                            <div  class="resource__item">
+                              <div class="resource__item-relative">
+                                <div class="resource__item__video">
+                                  <div class="bg-video" style="background-image: url(assets/img/resource-img.png);">
+                                    <div class="bt-play"></div>
+                                  </div>
+                                  <div class="video-container">
+                                    <iframe width="100%" height="100%"
+                                      src="https://www.youtube.com/embed/qIjZqxqDTNM?rel=0&amp;showinfo=0" frameborder="0"
+                                      allowfullscreen="allowfullscreen"></iframe>
+                                  </div>
+                                </div>
+                                <div class="resource__item__icon__position">
+                                  <div class="resource__item__icon__container">
+                                    <div class="resource__item__icon__bg">
+                                      <img src="assets/img/icons/awesome-play-circle.svg" alt="icon" class="resource__item__icon">
+                                    </div>
+                                    <div class="resource__item__icon__bg">
+                                      <img src="assets/img/icons/feather-download.svg" alt="icon" class="resource__item__icon">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <a href="#" class="resource__item-link">
+                                <h2 class="resource__item__title">პოლიციელი ჩემი მეგობარია.mov</h2>
+                                <p class="resource__item__description"><span class="search__result__word">სამართ</span>ლებრივი კულტურა</p>
+                              </a>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                            <div class="resource__item">
+                              <div class="resource__item-relative">
+                                <img src="assets/img/resource-img.png" alt="resource image" class="resource__item__img"
+                                data-toggle="modal" data-target="#fullscreenImgModal" />
+                                <div class="resource__item__icon__position">
+                                  <div class="resource__item__icon__container">
+                                    <div class="resource__item__icon__bg">
+                                      <img src="assets/img/icons/image.svg" alt="icon" class="resource__item__icon">
+                                    </div>
+                                    <div class="resource__item__icon__bg">
+                                      <img src="assets/img/icons/feather-download.svg" alt="icon" class="resource__item__icon">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <a href="#" class="resource__item-link">
+                                <h2 class="resource__item__title"><span class="search__result__word">სამართ</span>ლებრივი-კულტურა.jpg</h2>
+                                <p class="resource__item__description">ვინ არის <span class="search__result__word">სამართ</span>ალდამცავი</p>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script src="assets/vendors/js/jquery.min.js"></script>
+    <script src="assets/vendors/js/bootstrap.min.js"></script>
+    <script src="assets/vendors/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ადმინისტრატორის პანელი</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          ადმინისტრატორი
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <div class="dropdown-divider"></div>
+          <a href="index.html" class="dropdown-item">
+            ადმინისტრატორის პანელი
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="editProfile.html" class="dropdown-item">
+            პროფილის რედაქტირება
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            გამოსვლა
+          </a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link" style="font-size: 14px;">
+      <span class="brand-text font-weight-light">ადმინისტრატორის პანელი</span>
+    </a>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- SidebarSearch Form -->
+      <div class="form-inline mt-2">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="themes.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                თემები
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="studentResource.html" class="nav-link active">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                მოსწავლის რესურსი
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="teacherResource.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                განმანათლებლის რესურსი
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="teachers.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                განმანათლებლები
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="additionalResources.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                დამატებითი რესურსები
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="languages.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                ენები
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="websiteTexts.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                საიტის ტექსტები
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-12 col-md-10 m-auto">
+              <h4 class="m-0">განმარტების დამატება</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12 col-md-10 m-auto">
+
+      <form>
+
+              <div class="card card-primary">
+
+                  <div class="card-body">
+
+
+                    <div class="form-check form-group">
+                      <input type="checkbox" class="form-check-input" id="page-has-main-visual">
+                      <label class="form-check-label" for="exampleCheck1">აქვს თუ არა გვერდს მთავარი
+                        ვიზუალი?</label>
+                    </div>
+
+
+                    <div id="main-visual-options">
+
+
+                      <div class="form-group">
+                        <label>აირჩიეთ გვერდის ლეიაუთი</label>
+                        <select class="form-control">
+                          <option value="0">აირჩიეთ</option>
+                          <option value="1">ვიზუალი ზემოთ, ტექსტი ქვემოთ</option>
+                          <option value="2">ვიზუალი ქვემოთ, ტექსტი ზემოთ</option>
+                          <option value="3">ვიზუალი მარჯვნივ, ტექსტი მარცხნივ</option>
+                          <option value="4">ვიზუალი მარცხნივ, ტექსტი მარჯვნივ</option>
+                        </select>
+                      </div>
+
+
+
+                      <div class="form-group">
+                        <label>რა ტიპისაა მთავარი ვიზუალი?</label>
+                        <select class="form-control" id="main-visual-type">
+                          <option value="none">აირჩიეთ</option>
+                          <option value="image">ფოტო / ილუსტრაცია / გიფი</option>
+                          <option value="video">ვიდეო</option>
+                        </select>
+                      </div>
+
+
+
+                    </div>
+
+
+
+                    <div class="upload-image-wrapper">
+
+                      <div class="form-group">
+                        <label for="resourceFile">ილუსტრაცია</label>
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="resourceFile"
+                              name="image" onchange="loadFile(event)" style="display: none;">
+                            <label class="custom-file-label" for="resourceFile" style="cursor: pointer;">ატვირთეთ
+                              ილუსტრაცია</label>
+                          </div>
+                        </div>
+                        <img id="output" class="output-img" />
+                      </div>
+                    </div>
+
+
+
+                    <div id="upload-video-wrapper">
+                      <div class="form-group">
+                        <label for="resourceTitle">ვიდეოს ლინკი youtube-დან</label>
+                        <input type="text" class="form-control" id="videoURL" placeholder="შეიყვანეთ ლინკი">
+                      </div>
+                    </div>
+
+
+
+                    <div class="form-check form-group">
+                      <input type="checkbox" class="form-check-input">
+                      <label class="form-check-label" for="exampleCheck1">გამოჩნდეს ნაბიჯების ჩამონათვალი</label>
+                    </div>
+
+
+
+                  </div>
+
+              </div>
+
+
+              <ul class="nav nav-tabs" id="languages" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link active" id="georgian-tab" data-toggle="tab" data-target="#georgian" type="button"
+                    role="tab" aria-controls="georgian" aria-selected="true">ქართული</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="english-tab" data-toggle="tab" data-target="#english" type="button" role="tab"
+                    aria-controls="english" aria-selected="false">ინგლისური</a>
+                </li>
+
+              </ul>
+              <div class="tab-content" id="languagesContent">
+                <div class="tab-pane fade show active" id="georgian" role="tabpanel" aria-labelledby="georgian-tab">
+                  <div class="card card-primary">
+
+                      <div class="card-body">
+
+                        <div class="form-group">
+                          <label for="resourceTitle">სათაური (ka)</label><span style="color:red;"> *</span>
+                          <input type="text" class="form-control" id="resourceTitle" placeholder="შეიყვანეთ სათაური">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="resourceTitle">ქვესათაური (ka)</label>
+                          <input type="text" class="form-control" id="resourceTitle" placeholder="შეიყვანეთ ქვესათაური">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="resourceDescription">ტექსტი (ka)</label><span style="color:red;"> *</span>
+                          <textarea id="summernote" name="name" rows="8" cols="80"></textarea>
+                        </div>
+
+
+
+                    <div class="upload-image-wrapper">
+
+                          <div class="form-group">
+                            <label for="resourceTitle">ილუსტრაციის სათაური (ka)</label>
+                            <input type="text" class="form-control" id="resourceTitle" placeholder="შეიყვანეთ სათაური">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="resourceDescription">ილუსტრაციის აღწერა (ka)</label>
+                            <input type="text" class="form-control" id="resourceDescription"
+                              placeholder="შეიყვანეთ აღწერა">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="resourceSource">ილუსტრაციის წყარო (ka)</label>
+                            <input type="text" class="form-control" id="resourceSource" placeholder="შეიყვანეთ წყარო">
+                          </div>
+                    </div>
+
+                      </div>
+
+
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="english" role="tabpanel" aria-labelledby="english-tab">
+                  <div class="card card-primary">
+
+                      <div class="card-body">
+
+                        <div class="form-group">
+                          <label for="resourceTitle">სათაური (en)</label>
+                          <input type="text" class="form-control" id="resourceTitle" placeholder="შეიყვანეთ სათაური">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="resourceTitle">ქვესათაური (en)</label>
+                          <input type="text" class="form-control" id="resourceTitle" placeholder="შეიყვანეთ ქვესათაური">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="resourceDescription">ტექსტი (en)</label>
+                          <textarea id="summernote" name="name" rows="8" cols="80"></textarea>
+                        </div>
+
+
+
+                    <div class="upload-image-wrapper">
+
+                          <div class="form-group">
+                            <label for="resourceTitle">ილუსტრაციის სათაური (en)</label>
+                            <input type="text" class="form-control" id="resourceTitle" placeholder="შეიყვანეთ სათაური">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="resourceDescription">ილუსტრაციის აღწერა (en)</label>
+                            <input type="text" class="form-control" id="resourceDescription"
+                              placeholder="შეიყვანეთ აღწერა">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="resourceSource">ილუსტრაციის წყარო (en)</label>
+                            <input type="text" class="form-control" id="resourceSource" placeholder="შეიყვანეთ წყარო">
+                          </div>
+                    </div>
+
+                      </div>
+
+
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary">დამატება</button>
+              </div>
+            </form>
+
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <p style="color:red">დამატების მერე მივიღოთ ამ განმარტების ლინკი,
+        რომელსაც ჩასვამენ იმ გვერდზე, საიდანაც გადმოვიდნენ განმარტების დასამატებლად.
+        გვერდი აღარ ავარჩევინე, რადგან უკვე არსებული გვერდიდან გადმოვლენ</p>
+
+
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer"></footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- jQuery -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
+  <!-- Bootstrap 4 -->
+  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- ChartJS -->
+  <script src="plugins/chart.js/Chart.min.js"></script>
+  <!-- Sparkline -->
+  <script src="plugins/sparklines/sparkline.js"></script>
+  <!-- JQVMap -->
+  <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+  <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+  <!-- jQuery Knob Chart -->
+  <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+  <!-- daterangepicker -->
+  <script src="plugins/moment/moment.min.js"></script>
+  <script src="plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- Tempusdominus Bootstrap 4 -->
+  <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+  <!-- Summernote -->
+  <script src="plugins/summernote/summernote-bs4.min.js"></script>
+  <!-- overlayScrollbars -->
+  <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/adminlte.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="dist/js/demo.js"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <script src="dist/js/pages/dashboard.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $("#main-visual-options").hide();
+      $(".upload-image-wrapper").hide();
+      $("#upload-video-wrapper").hide();
+
+
+      $('#page-has-main-visual').on('change', function (e) {
+
+        if ($(this).is(':checked')) {
+
+          $("#main-visual-options").show();
+        } else {
+          $("#main-visual-options").hide();
+          $(".upload-image-wrapper").hide();
+          $("#upload-video-wrapper").hide();
+        }
+      });
+
+
+      $("#main-visual-type").change(function () {
+        var val = $(this).val();
+
+        if (val == "image") {
+
+          $("#upload-video-wrapper").hide();
+          $(".upload-image-wrapper").show();
+        }
+        else if (val == "video") {
+          $(".upload-image-wrapper").hide();
+          $("#upload-video-wrapper").show();
+        }
+        else {
+          $(".upload-image-wrapper").hide();
+          $("#upload-video-wrapper").hide();
+        }
+      });
+
+    });
+    var loadFile = function (event) {
+      var image = document.getElementById('output');
+      image.src = URL.createObjectURL(event.target.files[0]);
+    };
+    var loadFile2 = function (event) {
+      var image = document.getElementById('output2');
+      image.src = URL.createObjectURL(event.target.files[0]);
+    };
+  </script>
+</body>
+
+</html>
