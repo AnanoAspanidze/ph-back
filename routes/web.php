@@ -157,21 +157,16 @@ Route::group(['middleware' => 'auth'], function() {
             Route::post('/sort', 'TeacherResourcesController@sortParts')->name('teacher_resources.sort');
             Route::post('/activate/{id}', 'TeacherResourcesController@activate')->name('teacher_resources.activate');
 
-            // Route::group(['prefix' => 'first_page'], function() {
-            //     Route::get('/create/{topic_id}', 'FirstPageController@create')->name('first_page.create');
-            //     Route::post('/store/{topic_id}', 'FirstPageController@store')->name('first_page.store');
-            //     Route::get('/edit/{id}', 'FirstPageController@edit')->name('first_page.edit');
-            //     Route::post('/update/{id}', 'FirstPageController@update')->name('first_page.update');
-            // });
-
-            // Route::group(['prefix' => 'other_page'], function() {
-            //     Route::get('/create/{topic_id}', 'OtherPageController@create')->name('other_page.create');
-            //     Route::post('/store/{topic_id}', 'OtherPageController@store')->name('other_page.store');
-            //     Route::get('/edit/{id}', 'OtherPageController@edit')->name('other_page.edit');
-            //     Route::post('/update/{id}', 'OtherPageController@update')->name('other_page.update');
-            // });
-
+            Route::group(['prefix' => 'part'], function() {
+                Route::get('/create/{course_id}', 'PartController@create')->name('part.create');
+                Route::post('/store/{course_id}', 'PartController@store')->name('part.store');
+                Route::get('/edit/{id}', 'PartController@edit')->name('part.edit');
+                Route::post('/update/{id}', 'PartController@update')->name('part.update');
+                Route::post('/activate/{id}', 'PartController@activate')->name('part.activate');
+            });
+            
         });
+
     });
     
 });

@@ -37,7 +37,7 @@
               </a>
               <img src="{{asset('img/illustrations/dog-indicates.gif')}}" alt="dog" class="section__exercise__img desktop-none">
           </div>
-          <div class="document__line mt-0"></div>
+          <div class="document__line mt-0 mt"></div>
       </div>
   </div>
 </section>

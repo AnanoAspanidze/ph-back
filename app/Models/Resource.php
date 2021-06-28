@@ -37,7 +37,7 @@ class Resource extends Model
         self::_rearrange($array, 0);
     }
 
-    private static function _rearrange($array,$count, $parent = 0) {
+    private static function _rearrange($array, $count, $parent = 0) {
     	foreach($array as $a) {
           $count++;
           self::where('id', $a['id'])->update(['parent'=> $parent, 'sort' => $count]);

@@ -25,7 +25,7 @@
             <h3 class="card-header-title">ნაწილები  <b>|</b>  ნაწილის დამატება / ედიტი</h3>
             <div class="card-header-right">
                 <a href="{{route('teacher_resources.edit', $course->id)}}" class="card-header-btn btn btn-primary">კურსის ედიტი</a>
-                <a href="" class="card-header-btn btn btn-primary">ლექციის დამატება</a>
+                <a href="{{route('part.create', $course->id)}}" class="card-header-btn btn btn-primary">ნაწილის დამატება</a>
             </div>
         </div>
 
@@ -62,7 +62,7 @@
             '<i class="fa fa-circle-o-notch fa-spin"></i> loading...'
             );
 
-            $.post("{{ route('teacher_resources.sort')}}", {orderArr: $('.dd').nestable('serialize'), '_token': "{{ csrf_token() }}"}, function(data){
+            $.post("{{ route('teacher_resources.sort')}}", {orderArr: $('.dd').nestable('serialize'), '_token': "{{ csrf_token() }}", 'id': "{{$course->id}}"}, function(data){
             $this.prop("disabled", false);
             $this.html('დასორტირებული მონაცემების შენახვა');
 

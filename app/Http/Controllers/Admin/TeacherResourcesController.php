@@ -6,21 +6,25 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\CurseRequest;
 use App\Http\Traits\SafeResponse;
-use App\Http\Traits\Helper;
 use App\Models\Language;
 use App\Models\Topic;
 use App\Models\Course;
+use App\Models\Part;
 
 class TeacherResourcesController extends Controller
 {
+    use SafeResponse;
+
     private $topic;
     private $language;
     private $course;
+    private $part;
 
-    public function __construct( Topic $topic, Language $language, Course $course ) {
+    public function __construct( Topic $topic, Language $language, Course $course, Part $part ) {
         $this->topic = $topic;
         $this->language = $language;
         $this->course = $course;
+        $this->part = $part;
         app()->setLocale('ka');
     }
 
@@ -103,13 +107,14 @@ class TeacherResourcesController extends Controller
 
             $course = $this->course
                 ->with([
-                    'topic' => function($q) {
-                        return $q->select('id', 'illustration');
+                    'parts' => function($q) {
+                        return $q->orderBy('sort','ASC');
                     }
                 ])
                 ->findOrFail($id);
 
-            return view('web.backend.sections.teacherResources.course', compact('course'));
+                return view('web.backend.sections.teacherResources.course', compact('course'));
+        
         } catch (\Throwable $e) {
             return back()->with('error','მოცემული გვერდი არ არსებობს');
         }
@@ -120,20 +125,16 @@ class TeacherResourcesController extends Controller
             'success' => "Data Sorted Successfully",
             'error' => "Can't sort data"
         ];
+        
         return $this->safeResponse(function() use ($request) {
             $array = $request->input('orderArr');
-            $this->resource->rearrange($array);
-            return [ "type" => 200, "errors" => []];
-        }, $messages);
-    }
-
-    public function activate(Request $request, $id) {
-        $messages = [
-            'success' => $request->status ? "გვერდი გაქტიურდა" : "გვერდი წარმატებით დიაქტივირებულია",
-            'error' => "გვერდის გააქტიურება ვერ მოხერხდა"
-        ];
-        return $this->safeResponse(function() use ($request, $id) {
-            $this->resource->findOrFail($id)->update(['active' => $request->status]);
+            $parts = $this->part->where('course_id', $request->input('id'));
+            $count = 0;
+            foreach($array as $a) {
+                $count++;
+                $this->part->where('id', $a['id'])->update(['sort' => $count]);
+            }
+            
             return [ "type" => 200, "errors" => []];
         }, $messages);
     }

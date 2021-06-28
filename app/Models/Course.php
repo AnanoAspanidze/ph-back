@@ -15,11 +15,14 @@ class Course extends Model
         'topic_id',
         'video',
         'link',
-        'sort',
         'active'
     ];
 
     public function topic() {
         return $this->belongsTo(Topic::class, 'topic_id');
+    }
+
+    public function parts() {
+        return $this->hasMany(Part::class);
     }
 }
