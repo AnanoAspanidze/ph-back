@@ -113,7 +113,9 @@
 </div>
 
 </br>
-@include('web.backend.sections.studentResources.game.questions.helper', ['questions' => $game->questions])
+@include('web.backend.sections.studentResources.game.questions.helper', [
+    'questions' => $game->questions,
+ ])
 
 
 </br>

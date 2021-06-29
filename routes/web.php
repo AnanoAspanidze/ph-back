@@ -146,7 +146,7 @@ Route::group(['middleware' => 'auth'], function() {
 
         // Student Resources
         Route::group(['prefix' => 'teacher_resources'], function() {
-
+            
             Route::get('/', 'TeacherResourcesController@index')->name('teacher_resources.index');
             Route::get('/course/create', 'TeacherResourcesController@create')->name('teacher_resources.create');
             Route::post('/course/store', 'TeacherResourcesController@store')->name('teacher_resources.store');
@@ -156,6 +156,12 @@ Route::group(['middleware' => 'auth'], function() {
             Route::get('/course/{id}', 'TeacherResourcesController@course')->name('teacher_resources.course');
             Route::post('/sort', 'TeacherResourcesController@sortParts')->name('teacher_resources.sort');
             Route::post('/activate/{id}', 'TeacherResourcesController@activate')->name('teacher_resources.activate');
+
+            Route::get('/question/create/{id}/{type}', 'QuestionController@questionCreate')->name('teacher_resources.question.create');
+            Route::post('/question/question/store/{id}/{type}', 'QuestionController@questionStore')->name('teacher_resources.question.store');
+            Route::get('/question/edit/{id}', 'QuestionController@questionEdit')->name('teacher_resources.question.edit');
+            Route::post('/question/update/{id}', 'QuestionController@questionUpdate')->name('teacher_resources.question.update');
+            Route::post('/question/activate/{id}', 'QuestionController@activate')->name('teacher_resources.question.activate');
 
             Route::group(['prefix' => 'part'], function() {
                 Route::get('/create/{course_id}', 'PartController@create')->name('part.create');

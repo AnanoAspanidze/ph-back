@@ -70,7 +70,13 @@ class PartController extends Controller
 
     public function edit(Request $request, $id) {
         $languages = $this->language->get();
-        $part = $this->part->findOrFail($id);
+        $part = $this->part
+            ->with([
+                'questions' => function($q) {
+                    return $q->withCount('answers');
+                }
+            ])->findOrFail($id);
+            
         return view('web.backend.sections.teacherResources.part.edit', compact('part', 'languages'));
     }
 

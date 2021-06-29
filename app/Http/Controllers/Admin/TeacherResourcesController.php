@@ -77,6 +77,9 @@ class TeacherResourcesController extends Controller
         $course = $this->course->with([
                 'topic' => function($q) {
                     return $q->select('id');
+                },
+                'questions' => function($q) {
+                    return $q->withCount('answers');
                 }
             ])->findOrFail($id);
 

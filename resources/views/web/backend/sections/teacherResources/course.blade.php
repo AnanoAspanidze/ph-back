@@ -30,18 +30,20 @@
         </div>
 
         <!-- /.card-header -->
-        <div class="card-body">
-            <div class="white-block margin-tp-10"> 
-               
-                <div class="text-right margin-bt-20">ქმედება</div>
-               
-                <div class="department-sortable dd">
-                    @include('web.backend.sections.teacherResources.list-helper', ['course' => $course])
+        @if (count($course->parts) > 0)
+            <div class="card-body">
+                <div class="white-block margin-tp-10"> 
+                
+                    <div class="text-right margin-bt-20">ქმედება</div>
+                
+                    <div class="department-sortable dd">
+                        @include('web.backend.sections.teacherResources.list-helper', ['course' => $course])
+                    </div>
+                
+                    <button type="button" class="btn btn-primary pull-left btn-save" id="load" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Loading ... ">დასორტირებული მონაცემების შენახვა</button>
                 </div>
-               
-                <button type="button" class="btn btn-primary pull-left btn-save" id="load" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Loading ... ">დასორტირებული მონაცემების შენახვა</button>
             </div>
-        </div>
+        @endif
         <!-- /.card-body -->
     </div>
 </div>

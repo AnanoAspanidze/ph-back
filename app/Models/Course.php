@@ -25,4 +25,8 @@ class Course extends Model
     public function parts() {
         return $this->hasMany(Part::class);
     }
+
+    public function questions() {
+        return $this->hasMany(Question::class);
+    }
 }

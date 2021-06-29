@@ -100,4 +100,11 @@
         </div>
     </div>
 </div>
+
+</br>
+@include('web.backend.sections.teacherResources.questions.helper', [
+    'questions' => $course->questions,
+    'create' => route('teacher_resources.question.create', [$course->id, 'course'])
+])
+
 @endsection

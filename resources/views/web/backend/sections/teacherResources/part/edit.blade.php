@@ -89,4 +89,10 @@
         </div>
     </div>
 </div>
+
+@include('web.backend.sections.teacherResources.questions.helper', [
+    'questions' => $part->questions,
+    'create' => route('teacher_resources.question.create', [$part->id, 'part'])
+])
+
 @endsection

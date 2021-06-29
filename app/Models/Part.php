@@ -24,4 +24,9 @@ class Part extends Model
     public function courses() {
         return $this->belongsTo(Course::class, 'course_id');
     }
+    
+    public function questions() {
+        return $this->hasMany(Question::class);
+    }
+    
 }
