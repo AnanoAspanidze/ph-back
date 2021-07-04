@@ -26,14 +26,17 @@ class TopicController extends Controller
         try {
 
             $search = '';
-            $direction = '';
+            $direction = 'student_resource';
 
             $query = $this->topic->where('active', true);
 
-            if(isset($request->direction)) {
-                $direction = $request->direction;
+            $direction = isset($request->direction) ? $request->direction : (auth()->guest() ? 'student_resource' : 'teacher_resource');
+
+            if($direction === 'student_resource') {
+                $query->whereHas('resources');
+            }else {
+                $query->whereHas('course');
             }
-            // $query->where('direction', $direction);
 
             if(isset($request->search)) {
                 $search = $request->search;
@@ -229,6 +232,11 @@ class TopicController extends Controller
             }
 
             if($item->parent) {
+                
+                if(!isset($stepIndex[$item->parent])) {
+                    $stepIndex[$item->parent] = null;
+                }
+
                 $this->array_insert($response, $stepIndex[$item->parent], $item);
                 $stepIndex[$item->parent] = $item->id;
             }else {

@@ -19,6 +19,7 @@ class CreateCoursesTable extends Migration
             
             $table->text('video')->nullable();
             $table->text('link')->nullable();
+            $table->string('views')->nullable()->default(0);
             $table->boolean('active')->default(true);
 
             $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade');

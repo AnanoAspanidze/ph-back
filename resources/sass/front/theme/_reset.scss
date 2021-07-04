@@ -292,3 +292,11 @@
   .Z-index {
     z-index: 999;
   }
+
+  .after-show::after {
+    display: block
+  }
+
+  .after-hidden::after {
+    display: none
+  }

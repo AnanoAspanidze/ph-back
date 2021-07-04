@@ -851,6 +851,9 @@
       &.orange {
         background-color: $component-color8;
       }
+      &.pink {
+        background-color: #FF97BB;
+      }
       &.green {
         background-color: $component-color9;
       }
@@ -887,9 +890,21 @@
           background-color: $component-color9;
         }
       }
+      &.pink {
+        .game__box__list__item::before {
+          background-color: #FF97BB;
+        }
+      }
       &.blue {
         .game__box__list__item::before {
           background-color: $component-color6;
+        }
+      }
+      &.purple {
+        border: 1px solid rgba($color: $component-color2, $alpha: 0.4);
+        border-radius: 10px;
+        .game__box__list__item::before {
+          background-color: $component-color2;
         }
       }
       &.relative {
@@ -1729,10 +1744,27 @@
           }
         }
       }
+      
       &__cont {
         &.answered-suc {
           .game__quiz__answ:not(.success) {
             opacity: 0.2;
+          }
+          .success-border{
+            border: 2px solid $component-color9;
+            opacity: 1!important;
+            &.blue {
+              background-color: rgba($color: $component-color16, $alpha: 0.2);
+            }
+            &.yellow {
+              background-color: rgba($color: $component-color17, $alpha: 0.2);
+            }
+            &.pink {
+              background-color: rgba($color: $component-color18, $alpha: 0.2);
+            }
+            &.purple {
+              background-color: rgba($color: $component-color19, $alpha: 0.2);
+            }
           }
         }
         &.answered-err {
@@ -1769,6 +1801,9 @@
       }
       &.blue {
         background-color: $component-color6;
+      }
+      &.pink {
+        background-color: #FF97BB;
       }
     }
     &__cont {

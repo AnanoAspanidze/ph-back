@@ -15,6 +15,7 @@ class Course extends Model
         'topic_id',
         'video',
         'link',
+        'views',
         'active'
     ];
 
@@ -29,4 +30,8 @@ class Course extends Model
     public function questions() {
         return $this->hasMany(Question::class);
     }
+
+    public function courseDetail() {
+        return $this->hasMany(CourseDetail::class);
+    }    
 }

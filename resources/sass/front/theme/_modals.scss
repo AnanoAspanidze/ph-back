@@ -144,17 +144,12 @@
       }
     }
     &-body {
-      padding: 10px;
+      padding: 10px 20px;
       background-color: $component-color1;
       height: calc(100vh - 291px);
       overflow: auto;
       @media #{$breakpoint-md} {
         padding: 34px;
-      }
-      .toc-item:last-child {
-        .tableOfConents__item {
-          margin-bottom: 0;
-        }
       }
       &::-webkit-scrollbar {
         width: 10px;
@@ -190,9 +185,9 @@
     &:hover {
       border: 2px solid $component-color2;
     }
-    // &:last-child {
-    //   margin-bottom: 0;
-    // }
+    &:last-child {
+      margin-bottom: 0;
+    }
     &.active {
       border: 2px solid $component-color2;
       .tableOfConents__item__number {
@@ -253,8 +248,8 @@
       font-size: 16px;
       color: $black;
       margin: 0 0 0 20px;
-      width: 42px;
-      height: 42px;
+      width: 24px;
+      height: 24px;
       border-radius: 4px;
       border-radius: 2px solid transparent;
       display: flex;

@@ -1,0 +1,542 @@
+.course {
+  &__intro {
+    padding: 34px 0 50px;
+    &.pd-sm {
+      padding: 15px 0 13px;
+    }
+    &__video {
+      &__container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+        &.mt-mobile {
+          margin-top: 34px;
+          @media #{$breakpoint-md} {
+            margin-top: 0;
+          }
+        }
+        &-hide {
+          &.active {
+            display: none;
+          }
+        }
+      }
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 10px solid rgba($color: $black, $alpha: 0.1);
+    }
+    &__content {
+      h2 {
+        font-family: $firagoBold;
+        font-size: 21px;
+        margin-bottom: 21px;
+        @media #{$breakpoint-md} {
+          font-size: 34px;
+        }
+      }
+      p {
+        font-family: $firagoRegular;
+        font-size: 16px;
+        margin-bottom: 0;
+      }
+      a {
+        font-family: $firagoBold;
+        font-size: 16px;
+        color: $component-color2;
+        margin-bottom: 13px;
+        display: block;
+      }
+      &.light {
+        p {
+          color: rgba($color: $black, $alpha: 0.6);
+        }
+      }
+    }
+    &__line {
+      width: 100%;
+      height: 1px;
+      background-color: rgba($color: $component-color2, $alpha: 0.1);
+      margin: 34px 0;
+      &.dark {
+        background-color: rgba($color: $component-color2, $alpha: 0.3);
+      }
+    }
+    &__btn {
+      border: 2px solid $component-color9;
+      margin-bottom: 0 !important;
+    }
+    &-bottom {
+      position: relative;
+      background-color: $white;
+      border-radius: 0 0 10px 10px;
+      @media #{$breakpoint-xl} {
+        border-radius: 0 0 30px 30px;
+      }
+      &__container {
+        padding: 34px 0;
+        @media #{$breakpoint-xl} {
+          padding-top: 84px;
+          padding-bottom: 55px;
+        }
+      }
+    }
+    &__header {
+      width: 100%;
+      padding: 25px 0;
+      background-color: $component-color2;
+      min-height: 55px;
+      display: flex;
+      align-items: center;
+      @media #{$breakpoint-md} {
+        padding: 14px 0;
+      }
+      @media #{$breakpoint-xl} {
+        position: absolute;
+        left: -20px;
+        width: calc(100% + 40px);
+      }
+      &__row {
+        @media #{$breakpoint-md} {
+          display: flex;
+          align-items: center;
+        }
+      }
+      &__item {
+        font-family: $firagoBold;
+        font-size: 16px;
+        color: $white;
+        padding-bottom: 25px;
+        border-bottom: 1px solid rgba($color: $white, $alpha: 0.1);
+        margin-bottom: 25px;
+        &:last-child {
+          margin-bottom: 0;
+          padding-bottom: 0;
+          border-bottom: none;
+        }
+        @media #{$breakpoint-md} {
+          padding-bottom: 0;
+          border-bottom: none;
+          margin-bottom: 0;
+          padding-right: 30px;
+          border-right: 1px solid rgba($color: $white, $alpha: 0.1);
+          margin-right: 30px;
+          white-space: nowrap;
+          &:last-child {
+            margin-right: 0;
+            padding-right: 0;
+            border-right: none;
+          }
+        }
+        a {
+          color: $white;
+          text-decoration: underline;
+          &.active {
+            color: $component-color7;
+          }
+        }
+        .link {
+          color: $white;
+          text-decoration: underline;
+          cursor: pointer;
+          &.active {
+            color: $component-color7;
+          }
+        }
+        .close-icon{
+          display: none;
+          cursor: pointer;
+          &.active {
+            display: inline-block;
+          }
+        }
+        .numb {
+          font-family: $firagoRegular;
+          font-size: 21px;
+          margin-left: 10px;
+        }
+        .icon {
+          fill: $white;
+          width: 14px;
+          height: 14px;
+        }
+      }
+      &__link {
+        font-family: $firagoMedium;
+        font-size: 13px;
+        color: $black;
+        background-color: $white;
+        padding: 6px 10px;
+        border-radius: 30px;
+        margin-right: 10px;
+        &:hover {
+          color: $component-color2;
+        }
+        &__list {
+          display: flex;
+          overflow: auto;
+        }
+      }
+    }
+    &__list {
+      padding: 55px 0;
+      @media #{$breakpoint-xl} {
+        padding: 148px 0 89px;
+      }
+      &__title {
+        font-family: $firagoRegular;
+        font-size: 21px;
+        margin-bottom: 34px;
+        @media #{$breakpoint-md} {
+          font-size: 34px;
+        }
+      }
+      &__item {
+        border: 1px solid $component-color2;
+        border-radius: 8px;
+        background-color: $white;
+        padding: 20px;
+        display: block;
+        margin-bottom: 30px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        @media #{$breakpoint-md} {
+          margin-bottom: 30px;
+        }
+        @media #{$breakpoint-xl-ex} {
+          padding: 32px 20px;
+        }
+        h3 {
+          font-family: $firagoBold;
+          font-size: 16px;
+          color: $black;
+          margin-bottom: 13px;
+        }
+        p {
+          font-family: $firagoMedium;
+          font-size: 13px;
+          color: rgba($color: $black, $alpha: 0.6);
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  &__list {
+    background-color: $component-color1;
+    padding: 20px;
+    height: 717px;
+    overflow-y: auto;
+    display: none;
+    border: 2px solid $component-color2;
+    border-radius: 8px;
+    margin-bottom: 34px;
+    &.active {
+      display: block;
+    }
+    @media #{$breakpoint-xl} {
+      display: block;
+      border: none;
+      border-radius: 0;
+      margin-bottom: 0;
+    }
+    &::-webkit-scrollbar {
+      width: 10px;
+      &-track {
+        background-color: $component-color21;
+        border-radius: 30px;
+      }
+      &-thumb {
+        background: $component-color2;
+        border-radius: 30px;
+        &:hover {
+          background: $component-color2;
+        }
+      }
+    }
+    .course__intro__list__item {
+      border: 1px solid rgba($color: $black, $alpha: 0.3);
+      &:hover {
+        border: 1px solid $component-color2;
+        h3 {
+          color: $component-color2;
+        }
+      }
+      &.active {
+        border: 3px solid $component-color2;
+        background-color: $component-color2;
+        h3 {
+          color: $white;
+        }
+        p {
+          color: $black;
+        }
+        @media #{$breakpoint-xl} {
+          border: 3px solid $component-color2;
+          background-color: $white;
+          h3 {
+            color: $component-color2;
+          }
+          p {
+            color: rgba($color: $black, $alpha: 0.6);
+          }
+        }
+      }
+      &.passed {
+        border: 1px solid $component-color9;
+        h3 {
+          color: $component-color9;
+        }
+        &:hover {
+          border: 1px solid $component-color2;
+          h3 {
+            color: $component-color2;
+          }
+        }
+      }
+      p {
+        width: 90%;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /*! autoprefixer: off */
+        -webkit-box-orient: vertical;
+      }
+    }
+    &__btn {
+      display: flex;
+      justify-content: space-between;
+      border: 2px solid $component-color2;
+      border-radius: 8px;
+      background-color: $component-color4;
+      padding: 10px;
+      margin-bottom: 34px;
+      @media #{$breakpoint-md} {
+        align-items: center;
+        padding: 20px 30px;
+      }
+      @media #{$breakpoint-xl} {
+        display: none;
+      }
+      &.active {
+        margin-bottom: 10px;
+      }
+      h3 {
+        color: $black;
+        font-family: $firagoMedium;
+        font-size: 16px;
+        margin-bottom: 0;
+        .purple {
+          color: $component-color2;
+          font-family: $firagoBold;
+          display: block;
+          margin-top: 5px;
+          @media #{$breakpoint-md} {
+            display: inline-block;
+            padding-left: 10px;
+            margin-top: 0;
+          }
+        }
+      }
+      .icon {
+        fill: $component-color2;
+        width: 13.65px;
+        height: 10px;
+      }
+    }
+    &__modal {
+      &-h2 {
+        font-family: $firagoRegular;
+        font-size: 21px;
+        color: $black;
+        margin-bottom: 13px;
+      }
+      &-p {
+        color: $component-color2;
+        font-family: $firagoBold;
+        font-size: 16px;
+      }
+    }
+  }
+  &__quiz {
+    &__quest {
+      @media #{$breakpoint-md} {
+        display: flex;
+        align-items: center;
+      }
+      .game__quiz__quest-div {
+        flex: none;
+        border: 2px solid $component-color2;
+        border-radius: 8px;
+        @media #{$breakpoint-md} {
+          position: static;
+          transform: translateY(0);
+        }
+      }
+      &-hide {
+        display: none;
+        &.active {
+          display: block;
+        }
+      }
+    }
+    &__answ__cont {
+      .game__quiz__answ {
+        background-color: rgba($color: $component-color2, $alpha: 0.1);
+      }
+    }
+    &__button__container {
+      margin-top: 55px;
+      margin-bottom: 55px;
+      justify-content: start;
+      display: none;
+      &.show {
+        display: flex;
+      }
+    }
+    &__title {
+      font-family: $firagoRegular;
+      font-size: 21px;
+      color: $black;
+      margin-bottom: 13px;
+      text-align: center;
+      margin-top: 21px;
+      @media #{$breakpoint-md} {
+        font-size: 34px;
+      }
+      @media #{$breakpoint-xl} {
+        margin-top: 55px;
+      }
+    }
+    &__description {
+      font-family: $firagoBold;
+      font-size: 16px;
+      color: $component-color2;
+      margin-bottom: 0;
+      text-align: center;
+    }
+    &__container {
+      margin-top: 55px;
+      .game__quiz__quest {
+        @media #{$breakpoint-md} {
+          display: flex;
+          align-items: center;
+        }
+      }
+      .game__quiz__quest-div {
+        border: 2px solid $component-color2;
+        border-radius: 8px;
+        flex: none;
+        @media #{$breakpoint-md} {
+          position: static;
+          transform: translateY(0);
+        }
+        @media #{$breakpoint-xl} {
+          position: absolute;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+  &__download__btn {
+    a {
+      text-decoration: underline;
+      color: $component-color2;
+      font-family: $firagoMedium;
+      font-size: 16px;
+    }
+    .icon {
+      width: 16px;
+      height: 16px;
+      margin-left: 12px;
+    }
+  }
+  &__content__row {
+    display: flex;
+    flex-direction: column-reverse;
+    @media #{$breakpoint-xl} {
+      flex-direction: row;
+    }
+    &.hide{
+      display: none;
+    }
+  }
+  &__content__resources{
+    display: none;
+    &.active{
+      display: block;
+    }
+  }
+  &__certificate {
+    width: 248px;
+    height: 192px;
+    background-color: $component-color9;
+    margin-bottom: 34px;
+  }
+  &__result {
+    padding: 55px 0;
+    @media #{$breakpoint-xl-ex} {
+      padding: 89px 0;
+    }
+    &__title {
+      font-family: $firagoMedium;
+      font-size: 34px;
+      margin-bottom: 10px;
+      &.green {
+        color: $component-color9;
+      }
+      &.red {
+        color: $error-red;
+      }
+    }
+    &__text {
+      font-family: $firagoRegular;
+      font-size: 21px;
+      color: rgba($color: $black, $alpha: 0.6);
+      margin-bottom: 0;
+      width: 100%;
+      @media #{$breakpoint-lg} {
+        width: 50%;
+      }
+    }
+    &__btn__row {
+      .about__page__btn {
+        width: 100%;
+        &.download {
+          .icon {
+            width: 16px;
+            height: 16px;
+          }
+        }
+        .icon {
+          left: 12px;
+          @media #{$breakpoint-md} {
+            left: 24px;
+          }
+        }
+      }
+      @media #{$breakpoint-xl} {
+        display: flex;
+        justify-content: space-between;
+        .about__page__btn {
+          margin-right: 30px;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.checkQuiz__tbn {
+  display: none;
+  margin-top: 34px;
+  &.show {
+    display: block;
+  }
+}

@@ -1,0 +1,40 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateCourseDetailsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('course_details', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('course_id')->index();
+            $table->unsignedBigInteger('user_id')->index();
+
+            $table->boolean('status')->nullable()->default(false);
+            $table->json('parts')->nullable();
+            
+            $table->unique(['course_id', 'user_id']);
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('course_details');
+    }
+}

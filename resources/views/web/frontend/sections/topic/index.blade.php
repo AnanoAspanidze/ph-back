@@ -31,7 +31,7 @@
             <form id="filter" method="get" action="{{route('topics')}}">
               <div class="section__themes__radiobutton__container">
                   <label class="radiobutton__container">
-                    <input type="radio" value="student_resource"  @if($direction && $direction === 'student_resource') checked="checked" @endif name="direction">
+                    <input type="radio" value="student_resource" @if(!$direction || ($direction && $direction === 'student_resource')) checked="checked" @endif name="direction">
                     <span class="checkmark"></span>
                     მოსწავლე
                   </label>
@@ -76,9 +76,10 @@
     </div>
     <div>
       <div class="row">
+        @php( $routePath = $direction === 'student_resource' ? 'topics.inner' : 'course.inner')
         @foreach ($topics as $topic)
           <div class="col-12 col-md-4">
-            <a href="{{route('topics.inner', [$topic->id])}}" class="theme__item mb">
+            <a href="{{route( $routePath, [$topic->id])}}" class="theme__item mb">
               <picture>
                 <source srcset="{{asset($topic->getUrlPath().'/medium_'.$topic->illustration)}}" type="image/webp">
                 <source srcset="{{asset($topic->getUrlPath().'/medium_'.$topic->illustration)}}" type="image/png">

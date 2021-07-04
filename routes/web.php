@@ -212,6 +212,14 @@ Route::group(
             Route::get('/explanation/{id}', 'Front\TopicController@explanation')->name('topics.explanation');
         });
 
+        Route::group(['prefix' => 'courses'], function() {
+            Route::get('/inner/{id}/{page?}', 'Front\CourseController@inner')->name('course.inner');
+            Route::get('/start/{id}', 'Front\CourseController@start')->name('course.start');
+            Route::post('/next', 'Front\CourseController@next')->name('course.next');
+
+            
+        });
+
         Route::get('/resources', 'Front\ResourceController@index')->name('resources');
         Route::get('/abouts/{page?}', 'Front\AboutController@index')->name('abouts');
         Route::get('/search', 'Front\SearchController@index')->name('search');

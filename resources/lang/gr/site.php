@@ -363,4 +363,18 @@ return [
 
 		"register_region_id_required" => "რეგიონის არჩევა აუცილებელია",
 		"register_region_id_exists" => "არჩეული რეგიონი არ არსებობს",
+
+
+
+		// Courses 
+		'course_name' => "კურსის სახელი",
+		'course_topics' => "სასწავლო კურსები",
+		'course_start' => "კურსის დაწყება",
+		'course_registered' => "რეგისტრირებულია",
+		'course_viewd' => "ნანახია",
+		'course_silabus' => "სილაბუსი",
+		'course_part' => "ნაწილი",	
+		'course_progress' => "პროგრესი",
+		'course_from_part' => "ნაწილიდან",
+		'course_download_text' => "ტექსტის გადმოწერა",
 ];
