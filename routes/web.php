@@ -216,8 +216,7 @@ Route::group(
             Route::get('/inner/{id}/{page?}', 'Front\CourseController@inner')->name('course.inner');
             Route::get('/start/{id}', 'Front\CourseController@start')->name('course.start');
             Route::post('/next', 'Front\CourseController@next')->name('course.next');
-
-            
+            Route::get('/quiz/{course_id}', 'Front\CourseController@quiz')->name('course.quiz');
         });
 
         Route::get('/resources', 'Front\ResourceController@index')->name('resources');

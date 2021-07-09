@@ -40,7 +40,6 @@ class CourseController extends Controller
     public function inner($id, $page = null)
     {
         try {
-
             $layout = 'intro';
             $course = $this->course
                 ->withCount('courseDetail')
@@ -49,7 +48,9 @@ class CourseController extends Controller
                         return $q->where('user_id', auth()->id());
                     },
                     'parts' => function($q) use ($page) {
-                        return $q->where('active', true)->orderBy('sort', 'asc');
+                        return $q->where('active', true)
+                                ->with('questions.answers')
+                                ->orderBy('sort', 'asc');
                     },
                     'topic' => function($q) {
                         return $q->select('id')->withTranslation('title', 'tags');
@@ -72,12 +73,13 @@ class CourseController extends Controller
                     $currentPart = $course->parts->where('id', $accesableParts[0])->first();
                 }
 
+                $currentPart->questions = $currentPart->questions->random(1);
+
             }else {
                 $course->update([
                     'views' => $course->views + 1
                 ]);
             }
-
             return view('web.frontend.sections.course.inner', compact('course', 'layout', 'currentPart', 'finishedParts'));
         }catch (\Throwable $e) {
             abort('404');
@@ -116,7 +118,7 @@ class CourseController extends Controller
 
     public function next(Request $request)
     {
-        try {
+        // try {
             if($course_id = $request->course_id && $part_id = $request->part_id) {
                 $course = $this->course
                     ->where('active', true)
@@ -131,16 +133,21 @@ class CourseController extends Controller
                 $courseDetail = $course->courseDetail->first();
                 $finishedParts = json_decode($courseDetail->parts, true) ?? [];
                                 
-                if(!$course || in_array($part_id, $finishedParts)) {
+                if(!$course){
                     return redirect()->back();
                 }
 
-                $finishedParts[] = (int)$part_id;
+                if(!in_array($part_id, $finishedParts)) {
+                    $finishedParts[] = (int)$part_id;                    
+                    $course->courseDetail->first()->update([
+                        'parts' => json_encode($finishedParts)
+                    ]);
+                }
 
-                $course->courseDetail->first()->update([
-                    'parts' => json_encode($finishedParts)
-                ]);
-                
+                if(count($finishedParts) === count($course->parts)) {
+                    return $course->courseDetail->status ? redirect()->back() : redirect()->route('course.quiz', $course->id);
+                }
+
                 $currentPart = $course->parts->find($part_id);
                 $next = $course->parts->where('sort', '>', $currentPart->sort)->first();
                 
@@ -152,6 +159,34 @@ class CourseController extends Controller
 
             }else { 
                 return redirect()->back();
+            }
+
+        // }catch (\Throwable $e) {
+        //     abort(404);
+        // }
+    }
+
+    public function quiz($course_id) {
+        try {
+            $course = $this->course
+                ->where('active', true)
+                ->with([
+                    'courseDetail' => function($q) {
+                        return $q->where('user_id', auth()->id());
+                    },
+                    'questions.answers'
+                ])
+                ->withCount('parts')
+                ->findOrFail($course_id);
+            $courseDetail = $course->courseDetail->first();
+            $finishedParts = json_decode($courseDetail->parts, true) ?? [];
+
+            if($courseDetail->status) {
+                return redirect()->back();
+            }
+
+            if(count($finishedParts) === $course->parts_count) {
+                return view('web.frontend.sections.course.quiz', compact('course'));
             }
 
         }catch (\Throwable $e) {

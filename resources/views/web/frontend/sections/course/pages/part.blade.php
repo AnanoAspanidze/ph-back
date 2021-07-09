@@ -37,41 +37,34 @@
               <div id="player" class="course__intro__video"></div>
             </div>
             <script src="https://www.youtube.com/player_api"></script>
-            <div class="course__quiz__quest-hide">
-              <div class="game__quiz__quest course__quiz__quest">
-                <span class="text">კითხვა რომელიც იწყება აქედან და გრძელდება ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი
-                  წაითხვა კი შეუძლებელია ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა კი შეუძლებელია ?</span>
-                <div class="game__quiz__quest-div" data-bs-toggle="modal" data-bs-target="#gameQuizQuest"> ? </div>
+            @if($currentPart->questions)
+              @php( $question = $currentPart->questions->first() )
+              <div class="course__quiz__quest-hide">
+                <div class="game__quiz__quest course__quiz__quest">
+                  <span class="text">{{$question->title.' ? '}}</span>
+                  <div class="game__quiz__quest-div" data-bs-toggle="modal" data-bs-target="#gameQuizQuest"> ? </div>
+                </div>
+                <div class="game__quiz__answ__cont course__quiz__answ__cont">
+                  @foreach ( $question->answers as  $answer )
+                    <div class="game__quiz__answ">
+                      <div class="game__checkbox"></div>
+                      <span class="text">{{$answer->answer}}</span>
+                    </div>
+                  @endforeach
+                </div>
+                <button class="about__page__btn game__button bt-blue checkQuiz__tbn">შემოწმება</button>
+                <div class="game__button__container course__quiz__button__container">
+                  <button class="about__page__btn game__button mr bt-gray" id="startQuiz">ახლიდან დაწყება</button>                
+                    <form action="{{route('course.next')}}" method="post">
+                        @csrf
+                        <input type="hidden" name="part_id" value="{{$currentPart->id}}">
+                        <input type="hidden" name="course_id" value="{{$course->id}}">
+                        <button class="about__page__btn game__button bt-blue"> @if($course->parts->last()->id === $currentPart->id) დასრულება @else შემდეგი საკითხი @endif</button>
+                    <form>
+                </div>
               </div>
-              <div class="game__quiz__answ__cont course__quiz__answ__cont">
-                <div class="game__quiz__answ">
-                  <div class="game__checkbox"></div>
-                  <span class="text">ცხოვრების ჯანსაღი წესი</span>
-                </div>
-                <div class="game__quiz__answ success">
-                  <div class="game__checkbox"></div>
-                  <span class="text">მოკლე პასუხი თუ იყო საჭირო</span>
-                </div>
-                <div class="game__quiz__answ error">
-                  <div class="game__checkbox"></div>
-                  <span class="text"> შედარებით გრძელი პასუხი თუ იყო საჭირო</span>
-                </div>
-                <div class="game__quiz__answ success-border">
-                  <div class="game__checkbox"></div>
-                  <span class="text">ცხოვრების ჯანსაღი წესი არა ისა კიდე</span>
-                </div>
-              </div>
-              <button class="about__page__btn game__button bt-blue checkQuiz__tbn">შემოწმება</button>
-              <div class="game__button__container course__quiz__button__container">
-                <button class="about__page__btn game__button mr bt-gray" id="startQuiz">ახლიდან დაწყება</button>
-                <form action="{{route('course.next')}}" method="post">
-                    @csrf
-                    <input type="hidden" name="part_id" value="{{$currentPart->id}}">
-                    <input type="hidden" name="course_id" value="{{$course->id}}">
-                    <button class="about__page__btn game__button bt-blue">შემდეგი საკითხი</button>
-                <form>
-              </div>
-            </div>
+            @endif
+
             <div class="course__intro__line"></div>
             <div class="page__content__text">
                 {!!$currentPart->description!!}
